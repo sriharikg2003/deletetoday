@@ -21,12 +21,18 @@ public class InstructionFetch {
 	{
 		if(IF_EnableLatch.isIF_enable())
 		{
+			System.out.println("In IF");
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter();
 			int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
+
+			System.out.println(newInstruction);
+
 			IF_OF_Latch.setInstruction(newInstruction);
 			containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 			
-			IF_EnableLatch.setIF_enable(false);
+			// IF_EnableLatch.setIF_enable(false);
+
+	
 			IF_OF_Latch.setOF_enable(true);
 		}
 	}

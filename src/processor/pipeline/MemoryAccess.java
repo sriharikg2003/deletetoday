@@ -17,6 +17,9 @@ public class MemoryAccess {
 	public void performMA()
 	{
 		if(EX_MA_Latch.isMA_enable()){
+
+			System.out.println("In MA");
+
 			int ALU_RESULT = EX_MA_Latch.getAluresult();
 			int DESTINATION = EX_MA_Latch.getDestination();
 			boolean IS_WRITE_BACK = EX_MA_Latch.getWriteBack();
@@ -45,7 +48,7 @@ public class MemoryAccess {
 			MA_RW_Latch.setOpCode(OPCODE);
 
 			MA_RW_Latch.setRW_enable(true);
-			EX_MA_Latch.setMA_enable(false);
+			// EX_MA_Latch.setMA_enable(false);
 		}
 	}
 

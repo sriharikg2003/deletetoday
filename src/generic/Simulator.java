@@ -12,6 +12,9 @@ public class Simulator {
 	static boolean simulationComplete;
 	public static int LINE_NUMBER;
 
+
+	public static int Branch_counter = 0 ;
+
 	public static void setupSimulation(String assemblyProgramFile, Processor p) {
 		Simulator.processor = p;
 		loadProgram(assemblyProgramFile);
@@ -53,21 +56,24 @@ public class Simulator {
 	public static void simulate() {
 		int DYNAMIC_INSTRUCTIONS = 0;
 		while (simulationComplete == false) {
-
+			// System.out.println("....... getRWUnit");
 			processor.getRWUnit().performRW();
-
+			// System.out.println("....... getMAUnit");
 			processor.getMAUnit().performMA();
-
+			// System.out.println("....... getEXUnit");
 			processor.getEXUnit().performEX();
-
+			// System.out.println("....... getOFUnit");
 			processor.getOFUnit().performOF();
-			
+			// System.out.println("....... performIF ");
 			processor.getIFUnit().performIF();
 			// Incrementing for checking the number of dynamic Instructions
 			DYNAMIC_INSTRUCTIONS++;
+			System.out.println("\n ");
 
 			Clock.incrementClock();
 		}
+
+		System.out.println(DYNAMIC_INSTRUCTIONS + ": SO MANY");
 
 		// Statistics
 

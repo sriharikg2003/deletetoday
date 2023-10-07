@@ -1,7 +1,7 @@
 package processor.pipeline;
 
 public class OF_EX_LatchType {
-	
+
 	// Flag for control
 	boolean EX_enable;
 	int BRANCH_TARGET;
@@ -10,9 +10,9 @@ public class OF_EX_LatchType {
 	int op1, op2;
 	int rd;
 	int DESTINATION;
-	
-	public OF_EX_LatchType()
-	{
+	boolean isBranchTaken;
+
+	public OF_EX_LatchType() {
 		EX_enable = false;
 	}
 
@@ -25,58 +25,87 @@ public class OF_EX_LatchType {
 	}
 
 	// Setter and getter for OPCODE
-	public void setOpCode(String OPCODE){
+	public void setOpCode(String OPCODE) {
 		this.OPCODE = OPCODE;
 	}
-	public String getOpCode(){
+
+	public String getOpCode() {
 		return OPCODE;
 	}
 
 	// Setter and getter for IMMEDIATE
-	public void setImmediate(int IMMEDIATE){
+	public void setImmediate(int IMMEDIATE) {
 		this.IMMEDIATE = IMMEDIATE;
 	}
-	public int getImmediate(){
+
+	public int getImmediate() {
 		return IMMEDIATE;
 	}
 
 	// Setter and getter for BRANCH_TARGET
-	public int getBranchTarget(){
+	public int getBranchTarget() {
 		return BRANCH_TARGET;
 	}
-	public void setBranchTarget(int BRANCH_TARGET){
+
+	public void setBranchTarget(int BRANCH_TARGET) {
 		this.BRANCH_TARGET = BRANCH_TARGET;
 	}
 
 	// Setter and getter for op1
-	public int getOp1(){
+	public int getOp1() {
 		return op1;
 	}
-	public void setOp1(int op1){
+
+	public void setOp1(int op1) {
 		this.op1 = op1;
 	}
 
 	// Setter and getter for op2
-	public int getOp2(){
+	public int getOp2() {
 		return op2;
 	}
-	public void setOp2(int op2){
+
+	public void setOp2(int op2) {
 		this.op2 = op2;
 	}
 
 	// Setter and getter for rd
-	public int getRd(){
+	public int getRd() {
 		return rd;
 	}
-	public void setRd(int rd){
+
+	public void setRd(int rd) {
 		this.rd = rd;
 	}
 
 	// Setter and getter for DESTINATION
-	public void setDestination(int DESTINATION){
+	public void setDestination(int DESTINATION) {
 		this.DESTINATION = DESTINATION;
 	}
-	public int getDestination(){
+
+	public int getDestination() {
 		return DESTINATION;
 	}
+
+	// Setter and getter for isBranchTaken
+	public boolean isBranchTaken() {
+		return isBranchTaken;
+	}
+
+	// Setter and getter for isBranchTaken
+	public void setBranchTaken(Boolean boolean_for_branch_taken) {
+		this.isBranchTaken = boolean_for_branch_taken;
+	}
+
+	// public void clear_OF_EX(){
+	// 	boolean EX_enable;
+	// 	int BRANCH_TARGET;
+	// 	String OPCODE;
+	// 	int IMMEDIATE;
+	// 	int op1, op2;
+	// 	int rd;
+	// 	int DESTINATION;
+	// 	boolean Branch_Taken;
+	// }
+
 }

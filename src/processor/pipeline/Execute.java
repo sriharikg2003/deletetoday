@@ -4,12 +4,14 @@ import processor.Processor;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.sound.midi.SysexMessage;
+
 public class Execute {
 	Processor containingProcessor;
 	OF_EX_LatchType OF_EX_Latch;
 	EX_MA_LatchType EX_MA_Latch;
 	EX_IF_LatchType EX_IF_Latch;
-
+    IF_EnableLatchType IF_EnableLatch;
 	public static Map<String, Integer> INSTRUCTION_TYPE = new HashMap<String, Integer>() {
 		{
 			put("00000", 3);
@@ -55,6 +57,9 @@ public class Execute {
 
 	public void performEX() {
 		if (OF_EX_Latch.isEX_enable()) {
+			
+
+			System.out.println("In EX");
 
 			String OPCODE = OF_EX_Latch.getOpCode();
 			int BRANCH_TARGET = OF_EX_Latch.getBranchTarget();
@@ -66,6 +71,7 @@ public class Execute {
 			int IMMEDIATE = OF_EX_Latch.getImmediate();
 			boolean IS_WRITE_BACK = false;
 
+
 			// beg, bne, blt, bgt and not jump
 			if (INSTRUCTION_TYPE.get(OPCODE) == 6) {
 				int PC = containingProcessor.getRegisterFile().getProgramCounter();
@@ -73,22 +79,31 @@ public class Execute {
 				if (OPCODE.equals("11001")) { // beq
 					if (rs1 == rdval) {
 						PC = BRANCH_TARGET;
+						OF_EX_Latch.setBranchTaken(true);
+
 					}
 				} else if (OPCODE.equals("11010")) { // bne
 					if (rs1 != rdval) {
 						PC = BRANCH_TARGET;
+						OF_EX_Latch.setBranchTaken(true);
+
 					}
 				} else if (OPCODE.equals("11011")) { // blt
 					if (rs1 < rdval) {
 						PC = BRANCH_TARGET;
+						OF_EX_Latch.setBranchTaken(true);
+
 					}
 				} else if (OPCODE.equals("11100")) { // bgt
 					if (rs1 > rdval) {
 						PC = BRANCH_TARGET;
+						OF_EX_Latch.setBranchTaken(true);
+
 					}
 				}
 
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
+				
 			}
 
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 2) {
@@ -159,6 +174,16 @@ public class Execute {
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 1) {
 				int PC = BRANCH_TARGET;
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
+				OF_EX_Latch.setBranchTaken(true);
+			}
+
+		
+			else if (INSTRUCTION_TYPE.get(OPCODE) == 0) {
+				// int PC = BRANCH_TARGET;
+				// containingProcessor.getRegisterFile().setProgramCounter(PC);
+				// OF_EX_Latch.setBranchTaken(true);
+				System.out.println("********************************");
+				IF_EnableLatch.setIF_enable(false);
 			}
 
 			// set all the things in the next latch.
@@ -169,7 +194,7 @@ public class Execute {
 			EX_MA_Latch.setrs1(rs1);
 
 			EX_MA_Latch.setMA_enable(true);
-			OF_EX_Latch.setEX_enable(false);
+			// OF_EX_Latch.setEX_enable(false);
 		}
 
 	}

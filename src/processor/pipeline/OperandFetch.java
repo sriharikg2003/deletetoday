@@ -4,6 +4,7 @@ import processor.Processor;
 import java.util.HashMap;
 import java.util.Map;
 import java.lang.Integer;
+import processor.pipeline.Variables;
 
 public class OperandFetch {
 	Processor containingProcessor;
@@ -68,13 +69,40 @@ public class OperandFetch {
 	}
 
 	public void performOF() {
-		if (IF_OF_Latch.isOF_enable()) {
+
+
+		System.out.println("BRANCH TAKEN "  + OF_EX_Latch.isBranchTaken());
+// Ass4
+
+		// IF_OF_Latch.enable_IF_OF_Later();
+
+		if(OF_EX_Latch.isBranchTaken()){
+			System.out.println("Yes bracnh is taken");
+			// OF_EX_Latch.setBranchTaken(false);
+			// IF_OF_Latch.setOF_enable(false);
+			OF_EX_Latch.setEX_enable(false);
+			Variables.increement_Branch_counter();
+
+			if (Variables.getBranch_counter()==0){
+				OF_EX_Latch.setEX_enable(true);
+				OF_EX_Latch.setBranchTaken(false)  ;
+				System.out.println("ENABLED OF_EX");
+			}
+		}
+
+
+		else if (IF_OF_Latch.isOF_enable()) {
+
+
+			System.out.println("In OF");
 
 			int PC = containingProcessor.getRegisterFile().getProgramCounter();
 			String INSTRUCTION = binaryofint(IF_OF_Latch.getInstruction());
 
 			// Control unit
 			String OPCODE = INSTRUCTION.substring(0, 5);
+
+
 			OF_EX_Latch.setOpCode(OPCODE);
 
 			// Immediate
@@ -140,7 +168,7 @@ public class OperandFetch {
 			OF_EX_Latch.setRd(rd);
 			OF_EX_Latch.setDestination(destRegIndex);
 
-			IF_OF_Latch.setOF_enable(false);
+			// IF_OF_Latch.setOF_enable(false);
 			OF_EX_Latch.setEX_enable(true);
 		}
 	}
