@@ -75,7 +75,10 @@ public class OperandFetch {
 
 		// IF_OF_Latch.enable_IF_OF_Later();
 
-
+			if (Variables.branch_taken_global_variable){
+			return;
+			}
+	
 
 
 		 if (IF_OF_Latch.isOF_enable()) {

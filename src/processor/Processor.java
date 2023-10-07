@@ -50,6 +50,9 @@ public class Processor {
 		MAUnit = new MemoryAccess(this, EX_MA_Latch, MA_RW_Latch);
 		RWUnit = new RegisterWrite(this, MA_RW_Latch, IF_EnableLatch);
 	}
+
+
+	
 	
 	public void printState(int memoryStartingAddress, int memoryEndingAddress)
 	{

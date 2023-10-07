@@ -10,7 +10,7 @@ public class OF_EX_LatchType {
 	int op1, op2;
 	int rd;
 	int DESTINATION;
-	public static boolean isBranchTaken;
+	public  boolean isBranchTaken;
 
 	public OF_EX_LatchType() {
 		EX_enable = false;
@@ -97,15 +97,16 @@ public class OF_EX_LatchType {
 		this.isBranchTaken = boolean_for_branch_taken;
 	}
 
-	// public void clear_OF_EX(){
-	// 	boolean EX_enable;
-	// 	int BRANCH_TARGET;
-	// 	String OPCODE;
-	// 	int IMMEDIATE;
-	// 	int op1, op2;
-	// 	int rd;
-	// 	int DESTINATION;
-	// 	boolean Branch_Taken;
-	// }
+	public void null_and_void_ex_of(){
+		 EX_enable = false;
+		 BRANCH_TARGET = 0;
+		 OPCODE = "00000";
+		 IMMEDIATE = 0;
+		 op1 = 0;
+		 op2 = 0;
+		 rd = 0;
+		 DESTINATION = 0;
+		 isBranchTaken = false;
+	}
 
 }

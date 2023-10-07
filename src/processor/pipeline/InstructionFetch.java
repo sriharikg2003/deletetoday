@@ -1,7 +1,7 @@
 package processor.pipeline;
 
 import processor.Processor;
-
+import processor.pipeline.Variables;
 public class InstructionFetch {
 	
 	Processor containingProcessor;
@@ -19,12 +19,27 @@ public class InstructionFetch {
 	
 	public void performIF()
 	{
-		if(IF_EnableLatch.isIF_enable())
+
+
+
+		System.out.println("BC TAKEN " + Variables.branch_taken_global_variable);
+
+		if (Variables.branch_taken_global_variable){
+			
+
+
+			Variables.branch_taken_global_variable = false;
+			return;
+		}
+
+
+		if(IF_EnableLatch.isIF_enable() )
 		{
 			System.out.println("In IF");
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter();
 			int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
 
+			System.out.println("lll " +containingProcessor.getMainMemory().getWord(3));
 
 			IF_OF_Latch.setInstruction(newInstruction);
 			containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
