@@ -26,7 +26,7 @@ public class InstructionFetch {
 
 		if (Variables.branch_taken_global_variable){
 			
-
+		IF_OF_Latch.null_and_void_if_of();
 
 			Variables.branch_taken_global_variable = false;
 			return;
@@ -39,7 +39,8 @@ public class InstructionFetch {
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter();
 			int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
 
-			System.out.println("lll " +containingProcessor.getMainMemory().getWord(3));
+			if (newInstruction!=0){
+			System.out.println(currentPC + " lll " +containingProcessor.getMainMemory().getWord(currentPC));
 
 			IF_OF_Latch.setInstruction(newInstruction);
 			containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
@@ -47,7 +48,11 @@ public class InstructionFetch {
 			// IF_EnableLatch.setIF_enable(false);
 
 	
-			IF_OF_Latch.setOF_enable(true);
+			IF_OF_Latch.setOF_enable(true);}
+
+			else{
+				return;
+			}
 		}
 	}
 

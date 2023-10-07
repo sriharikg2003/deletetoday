@@ -36,5 +36,10 @@ public class IF_OF_LatchType {
 		ctr = 1;
 	}
 
+	public void null_and_void_if_of(){
+		 OF_enable = true;
+		INSTRUCTION  = 0;
+		
+	}
 
 }

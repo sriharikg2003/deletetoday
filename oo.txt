@@ -1,11 +1,11 @@
 /home/srihari/Desktop/CreateAsm
 Symbol Table :
-[{a=0, main=1, quit=3}]
+[{a=0, main=1}]
 
 Parsed instructions :
-[[PC=1	add	[Register:0]	[Register:0]	[Register:0]
-, PC=2	jmp	null	null	[Label:quit]
-, PC=3	add	[Register:0]	[Register:1]	[Register:0]
+[[PC=1	addi	[Register:0]	[Immediate:10]	[Register:5]
+, PC=2	addi	[Register:28]	[Label:%28]	[Register:28]
+, PC=3	muli	[Register:5]	[Immediate:10]	[Register:10]
 , PC=4	end	null	null	null
 ]]
 1
@@ -13,10 +13,10 @@ Parsed instructions :
 3
 4
 00000000000000000000000000000001
-00000000000000000000000001100100
-00000000000000000000000000000000
-11000000000000000000000000000001
-00000000000000100000000000000000
+00000000000000000000000000001010
+00001000000010100000000000001010
+00001111001110000000000000000000
+00101001010101000000000000001010
 11101000000000000000000000000000
 
 Buildfile: /home/srihari/Desktop/CA_Lab4_SRIHARI/build.xml
@@ -26,132 +26,106 @@ build-subprojects:
 init:
 
 build-project:
-    [javac] Compiling 3 source files to /home/srihari/Desktop/CA_Lab4_SRIHARI/bin
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 8
-    [javac] 1 warning
 
 build:
 
 make-jar:
-      [jar] Building jar: /home/srihari/Desktop/CA_Lab4_SRIHARI/jars/simulator.jar
 
 BUILD SUCCESSFUL
 Total time: 0 seconds
 CYCLE :1
 BC TAKEN false
 In IF
-lll 131072
+1 lll 134873098
 
  
 CYCLE :2
 In OF
 BC TAKEN false
 In IF
-lll 131072
+2 lll 255328256
 
  
 CYCLE :3
 In EX
-In EX00000
-3 BC 1
+In EX00001
+3 BC 11
 In OF
 BC TAKEN false
 In IF
-lll 131072
+3 lll 693370890
 
  
 CYCLE :4
 In MA
 In EX
-In EX11000
-4 BC 3
-BC TAKEN true
-
- 
-CYCLE :5
-In RW
-writing 0
-In MA
-In OF
-BC TAKEN false
-In IF
-lll 131072
-
- 
-CYCLE :6
-In RW
-In MA
-In EX
-In EX00000
+In EX00001
 4 BC 2
 In OF
 BC TAKEN false
 In IF
-lll 131072
+4 lll -402653184
+
+ 
+CYCLE :5
+In RW
+writing 10
+In MA
+In EX
+In EX00101
+5 BC 13
+In OF
+BC TAKEN false
+In IF
+
+ 
+CYCLE :6
+In RW
+writing 0
+In MA
+In EX
+In EX11101
+5 BC 4
+In OF
+BC TAKEN false
+In IF
 
  
 CYCLE :7
 In RW
+writing 0
 In MA
 In EX
-In EX00000
-5 BC 3
+In EX11101
+5 BC 4
 In OF
 BC TAKEN false
 In IF
-lll 131072
 
  
 CYCLE :8
 In RW
-writing 65535
 In MA
 In EX
 In EX11101
-6 BC 4
+5 BC 4
 In OF
 BC TAKEN false
 In IF
-lll 131072
 
  
-CYCLE :9
-In RW
-writing 65535
-In MA
-In EX
-In EX00000
-7 BC 5
-In OF
-BC TAKEN false
-In IF
-lll 131072
-
- 
-CYCLE :10
-In RW
-In MA
-In EX
-In EX00000
-8 BC 6
-In OF
-BC TAKEN false
-In IF
-lll 131072
-
- 
-10: SO MANY
+8: SO MANY
 
 Register File Contents:
 
-PC	: 9
+PC	: 5
 
-x0	: 65535
+x0	: 0
 x1	: 65535
 x2	: 65535
 x3	: 0
 x4	: 0
-x5	: 0
+x5	: 10
 x6	: 0
 x7	: 0
 x8	: 0
@@ -183,10 +157,10 @@ x31	: 0
 
 Main Memory Contents:
 
-0		: 100
-1		: 0
-2		: -1073741823
-3		: 131072
+0		: 10
+1		: 134873098
+2		: 255328256
+3		: 693370890
 4		: -402653184
 5		: 0
 6		: 0
@@ -336,5 +310,5 @@ Main Memory Contents:
 150		: 0
 
 
-Hash of the Processor State = 1120401188
+Hash of the Processor State = 1095141912
 /home/srihari/Desktop/CA_Lab4_SRIHARI
