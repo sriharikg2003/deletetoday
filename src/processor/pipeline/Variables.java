@@ -7,7 +7,7 @@ public class Variables {
 
     public static void increement_Branch_counter() {
         Branch_counter = (Branch_counter+1)%1;
-        System.out.println("null");
+        System.out.println("BC IS " +Branch_counter);
     }
 
     public static void setBranch_counter(int number){

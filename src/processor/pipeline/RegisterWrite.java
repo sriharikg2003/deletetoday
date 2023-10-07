@@ -37,10 +37,14 @@ public class RegisterWrite {
 				if (OPCODE.equals("10110"))
 				{
 					containingProcessor.getRegisterFile().setValue(destination, LOAD_RESULT);
+					System.out.println("writing "+LOAD_RESULT);
+
 				}
 				else
 				{
 					containingProcessor.getRegisterFile().setValue(destination, ALU_RESULT);
+					System.out.println("writing "+ALU_RESULT);
+
 				}
 			}
 	

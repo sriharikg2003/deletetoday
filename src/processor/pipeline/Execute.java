@@ -11,7 +11,7 @@ public class Execute {
 	OF_EX_LatchType OF_EX_Latch;
 	EX_MA_LatchType EX_MA_Latch;
 	EX_IF_LatchType EX_IF_Latch;
-    IF_EnableLatchType IF_EnableLatch;
+	IF_EnableLatchType IF_EnableLatch;
 	public static Map<String, Integer> INSTRUCTION_TYPE = new HashMap<String, Integer>() {
 		{
 			put("00000", 3);
@@ -57,7 +57,6 @@ public class Execute {
 
 	public void performEX() {
 		if (OF_EX_Latch.isEX_enable()) {
-			
 
 			System.out.println("In EX");
 
@@ -71,7 +70,6 @@ public class Execute {
 			int IMMEDIATE = OF_EX_Latch.getImmediate();
 			boolean IS_WRITE_BACK = false;
 
-
 			// beg, bne, blt, bgt and not jump
 			if (INSTRUCTION_TYPE.get(OPCODE) == 6) {
 				int PC = containingProcessor.getRegisterFile().getProgramCounter();
@@ -79,31 +77,43 @@ public class Execute {
 				if (OPCODE.equals("11001")) { // beq
 					if (rs1 == rdval) {
 						PC = BRANCH_TARGET;
-						OF_EX_Latch.setBranchTaken(true);
+						OF_EX_Latch.isBranchTaken = true;
+
+						IF_EnableLatch.IF_enable = false;			
+						OF_EX_Latch.setEX_enable(false);
 
 					}
 				} else if (OPCODE.equals("11010")) { // bne
 					if (rs1 != rdval) {
 						PC = BRANCH_TARGET;
-						OF_EX_Latch.setBranchTaken(true);
+						OF_EX_Latch.isBranchTaken = true;
+						IF_EnableLatch.IF_enable = false;			
+						OF_EX_Latch.setEX_enable(false);
+
 
 					}
 				} else if (OPCODE.equals("11011")) { // blt
 					if (rs1 < rdval) {
 						PC = BRANCH_TARGET;
-						OF_EX_Latch.setBranchTaken(true);
+						OF_EX_Latch.isBranchTaken = true;
+						IF_EnableLatch.IF_enable = false;			
+						OF_EX_Latch.setEX_enable(false);
+
 
 					}
 				} else if (OPCODE.equals("11100")) { // bgt
 					if (rs1 > rdval) {
 						PC = BRANCH_TARGET;
-						OF_EX_Latch.setBranchTaken(true);
+						OF_EX_Latch.isBranchTaken = true;
+						IF_EnableLatch.IF_enable = false;			
+						OF_EX_Latch.setEX_enable(false);
+
 
 					}
 				}
 
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
-				
+
 			}
 
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 2) {
@@ -174,24 +184,30 @@ public class Execute {
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 1) {
 				int PC = BRANCH_TARGET;
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
-				OF_EX_Latch.setBranchTaken(true);
+
+				System.out.println("JUMP");
+				OF_EX_Latch.isBranchTaken = true;
+							OF_EX_Latch.setEX_enable(false);
+
+				IF_EnableLatch.IF_enable = false;			
+				OF_EX_Latch.setEX_enable(false);
+
 			}
 
-		
-			else if (INSTRUCTION_TYPE.get(OPCODE) == 0) {
-				// int PC = BRANCH_TARGET;
-				// containingProcessor.getRegisterFile().setProgramCounter(PC);
-				// OF_EX_Latch.setBranchTaken(true);
-				System.out.println("********************************");
-				IF_EnableLatch.setIF_enable(false);
-			}
+			// else if (INSTRUCTION_TYPE.get(OPCODE) == 0) {
+			// // int PC = BRANCH_TARGET;
+			// // containingProcessor.getRegisterFile().setProgramCounter(PC);
+			// // OF_EX_Latch.setBranchTaken(true);
+			// System.out.println("********************************");
+			// IF_EnableLatch.setIF_enable(false);
+			// }
 
 			// set all the things in the next latch.
 			EX_MA_Latch.setOpCode(OPCODE);
 			EX_MA_Latch.setAluResult(ALU_RESULT);
 			EX_MA_Latch.setDestination(DESTINATION);
-			EX_MA_Latch.setWriteBack(IS_WRITE_BACK);
 			EX_MA_Latch.setrs1(rs1);
+			EX_MA_Latch.setWriteBack(IS_WRITE_BACK);
 
 			EX_MA_Latch.setMA_enable(true);
 			// OF_EX_Latch.setEX_enable(false);

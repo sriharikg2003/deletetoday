@@ -3,14 +3,14 @@ package processor.pipeline;
 public class OF_EX_LatchType {
 
 	// Flag for control
-	boolean EX_enable;
+	public  boolean EX_enable;
 	int BRANCH_TARGET;
 	String OPCODE;
 	int IMMEDIATE;
 	int op1, op2;
 	int rd;
 	int DESTINATION;
-	boolean isBranchTaken;
+	public static boolean isBranchTaken;
 
 	public OF_EX_LatchType() {
 		EX_enable = false;
@@ -88,12 +88,12 @@ public class OF_EX_LatchType {
 	}
 
 	// Setter and getter for isBranchTaken
-	public boolean isBranchTaken() {
+	public boolean is_BranchTaken() {
 		return isBranchTaken;
 	}
 
 	// Setter and getter for isBranchTaken
-	public void setBranchTaken(Boolean boolean_for_branch_taken) {
+	public void set_BranchTaken(Boolean boolean_for_branch_taken) {
 		this.isBranchTaken = boolean_for_branch_taken;
 	}
 

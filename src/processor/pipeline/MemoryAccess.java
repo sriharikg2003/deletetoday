@@ -29,8 +29,8 @@ public class MemoryAccess {
 
 // LOAD 
 			if(OPCODE.equals("10110")){
-				
 				LOAD_RESULT= containingProcessor.getMainMemory().getWord(ALU_RESULT);
+				System.out.println("Loaded " + LOAD_RESULT);
 
 			}
 
@@ -39,6 +39,8 @@ public class MemoryAccess {
 			if(OPCODE.equals("10111")){
 				System.out.println("storing in mem "+ALU_RESULT+" rs1 "+rs1);
 				containingProcessor.getMainMemory().setWord(ALU_RESULT, rs1);
+				System.out.println("Stored " + ALU_RESULT);
+
 			}
 
 			MA_RW_Latch.setAluResult(ALU_RESULT);

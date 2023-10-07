@@ -56,6 +56,8 @@ public class Simulator {
 	public static void simulate() {
 		int DYNAMIC_INSTRUCTIONS = 0;
 		while (simulationComplete == false) {
+						System.out.println("CYCLE :"+(DYNAMIC_INSTRUCTIONS+1) );
+
 			// System.out.println("....... getRWUnit");
 			processor.getRWUnit().performRW();
 			// System.out.println("....... getMAUnit");
