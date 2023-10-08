@@ -116,6 +116,10 @@ public class OperandFetch {
 		String Aopcode = A.substring(0, 5);
 		String Bopcode = B.substring(0, 5);
 	
+		if (a==-402653184 || b==402653184){
+			return false;
+		}
+
 		int Ars1 = (int) Long.parseLong(A.substring(5, 10), 2);
 		int AimmBit = 0;
 		int Ars2 = 31;
@@ -195,7 +199,7 @@ public class OperandFetch {
 
 		System.out.println("In OF");
 
-
+		System.out.println("lallalalalaaaaa " + this.checkConflict(-754974720, -754974720));
 		// IF_OF_Latch.enable_IF_OF_Later();
 
 		if (Variables.branch_taken_global_variable) {
@@ -235,6 +239,8 @@ public class OperandFetch {
 			
 			)
 			{
+
+				
 
 				Variables.CONFLICT_PC_OF = PC;
 

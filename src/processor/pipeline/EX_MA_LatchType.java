@@ -13,7 +13,7 @@ public class EX_MA_LatchType {
 	int rs1;
 	
 
-	int EX_MA_instruction_in_integer ; 
+	int EX_MA_instruction_in_integer = -1082130432; 
 
 	public void set_EX_MA_instruction_in_integer(int x){
 		EX_MA_instruction_in_integer = x;

@@ -3,20 +3,17 @@ Symbol Table :
 [{a=0, main=1}]
 
 Parsed instructions :
-[[PC=1	addi	[Register:0]	[Immediate:10]	[Register:5]
-, PC=2	addi	[Register:28]	[Label:%28]	[Register:28]
-, PC=3	muli	[Register:5]	[Immediate:10]	[Register:10]
-, PC=4	end	null	null	null
+[[PC=1	addi	[Register:0]	[Immediate:5]	[Register:5]
+, PC=2	muli	[Register:5]	[Immediate:100]	[Register:6]
+, PC=3	end	null	null	null
 ]]
 1
 2
 3
-4
 00000000000000000000000000000001
 00000000000000000000000000001010
-00001000000010100000000000001010
-00001111001110000000000000000000
-00101001010101000000000000001010
+00001000000010100000000000000101
+00101001010011000000000001100100
 11101000000000000000000000000000
 
 Buildfile: /home/srihari/Desktop/CA_Lab4_SRIHARI/build.xml
@@ -32,283 +29,2973 @@ build:
 make-jar:
 
 BUILD SUCCESSFUL
-Total time: 0 seconds
+Total time: 1 second
 CYCLE :1
+In OF
+lallalalalaaaaa false
 BC TAKEN false
 In IF
-1 lll 134873098
+1 lll 134873093
 
  
 CYCLE :2
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  false
+****** PRINTING CONFLICT OF - MA: false
 BC TAKEN false
 In IF
-2 lll 255328256
+2 lll 692846692
 
  
 CYCLE :3
 In EX
 In EX00001
-3 BC 11
+3 BC 6
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: true
 BC TAKEN false
-In IF
-3 lll 693370890
 
  
 CYCLE :4
 In MA
-In EX
-In EX00001
-4 BC 2
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
 BC TAKEN false
-In IF
-4 lll -402653184
 
  
 CYCLE :5
 In RW
-writing 10
+writing 5
 In MA
-In EX
-In EX00101
-5 BC 13
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
 BC TAKEN false
-In IF
 
  
 CYCLE :6
 In RW
-writing 0
+writing 5
 In MA
-In EX
-In EX11101
-5 BC 4
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
 BC TAKEN false
-In IF
 
  
 CYCLE :7
 In RW
-writing 0
+writing 5
 In MA
-In EX
-In EX11101
-5 BC 4
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
 BC TAKEN false
-In IF
 
  
 CYCLE :8
 In RW
+writing 5
 In MA
-In EX
-In EX11101
-5 BC 4
 In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
 BC TAKEN false
-In IF
 
  
-8: SO MANY
+CYCLE :9
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
-Register File Contents:
+ 
+CYCLE :10
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
-PC	: 5
+ 
+CYCLE :11
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
-x0	: 0
-x1	: 65535
-x2	: 65535
-x3	: 0
-x4	: 0
-x5	: 10
-x6	: 0
-x7	: 0
-x8	: 0
-x9	: 0
-x10	: 0
-x11	: 0
-x12	: 0
-x13	: 0
-x14	: 0
-x15	: 0
-x16	: 0
-x17	: 0
-x18	: 0
-x19	: 0
-x20	: 0
-x21	: 0
-x22	: 0
-x23	: 0
-x24	: 0
-x25	: 0
-x26	: 0
-x27	: 0
-x28	: 0
-x29	: 0
-x30	: 0
-x31	: 0
+ 
+CYCLE :12
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
+ 
+CYCLE :13
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
+ 
+CYCLE :14
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
-Main Memory Contents:
+ 
+CYCLE :15
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
-0		: 10
-1		: 134873098
-2		: 255328256
-3		: 693370890
-4		: -402653184
-5		: 0
-6		: 0
-7		: 0
-8		: 0
-9		: 0
-10		: 0
-11		: 0
-12		: 0
-13		: 0
-14		: 0
-15		: 0
-16		: 0
-17		: 0
-18		: 0
-19		: 0
-20		: 0
-21		: 0
-22		: 0
-23		: 0
-24		: 0
-25		: 0
-26		: 0
-27		: 0
-28		: 0
-29		: 0
-30		: 0
-31		: 0
-32		: 0
-33		: 0
-34		: 0
-35		: 0
-36		: 0
-37		: 0
-38		: 0
-39		: 0
-40		: 0
-41		: 0
-42		: 0
-43		: 0
-44		: 0
-45		: 0
-46		: 0
-47		: 0
-48		: 0
-49		: 0
-50		: 0
-51		: 0
-52		: 0
-53		: 0
-54		: 0
-55		: 0
-56		: 0
-57		: 0
-58		: 0
-59		: 0
-60		: 0
-61		: 0
-62		: 0
-63		: 0
-64		: 0
-65		: 0
-66		: 0
-67		: 0
-68		: 0
-69		: 0
-70		: 0
-71		: 0
-72		: 0
-73		: 0
-74		: 0
-75		: 0
-76		: 0
-77		: 0
-78		: 0
-79		: 0
-80		: 0
-81		: 0
-82		: 0
-83		: 0
-84		: 0
-85		: 0
-86		: 0
-87		: 0
-88		: 0
-89		: 0
-90		: 0
-91		: 0
-92		: 0
-93		: 0
-94		: 0
-95		: 0
-96		: 0
-97		: 0
-98		: 0
-99		: 0
-100		: 0
-101		: 0
-102		: 0
-103		: 0
-104		: 0
-105		: 0
-106		: 0
-107		: 0
-108		: 0
-109		: 0
-110		: 0
-111		: 0
-112		: 0
-113		: 0
-114		: 0
-115		: 0
-116		: 0
-117		: 0
-118		: 0
-119		: 0
-120		: 0
-121		: 0
-122		: 0
-123		: 0
-124		: 0
-125		: 0
-126		: 0
-127		: 0
-128		: 0
-129		: 0
-130		: 0
-131		: 0
-132		: 0
-133		: 0
-134		: 0
-135		: 0
-136		: 0
-137		: 0
-138		: 0
-139		: 0
-140		: 0
-141		: 0
-142		: 0
-143		: 0
-144		: 0
-145		: 0
-146		: 0
-147		: 0
-148		: 0
-149		: 0
-150		: 0
+ 
+CYCLE :16
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
+ 
+CYCLE :17
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
 
-Hash of the Processor State = 1095141912
-/home/srihari/Desktop/CA_Lab4_SRIHARI
+ 
+CYCLE :18
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :19
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :20
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :21
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :22
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :23
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :24
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :25
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :26
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :27
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :28
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :29
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :30
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :31
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :32
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :33
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :34
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :35
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :36
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :37
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :38
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :39
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :40
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :41
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :42
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :43
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :44
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :45
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :46
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :47
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :48
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :49
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :50
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :51
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :52
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :53
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :54
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :55
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :56
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :57
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :58
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :59
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :60
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :61
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :62
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :63
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :64
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :65
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :66
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :67
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :68
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :69
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :70
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :71
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :72
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :73
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :74
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :75
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :76
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :77
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :78
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :79
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :80
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :81
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :82
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :83
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :84
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :85
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :86
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :87
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :88
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :89
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :90
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :91
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :92
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :93
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :94
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :95
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :96
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :97
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :98
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :99
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :100
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :101
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :102
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :103
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :104
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :105
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :106
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :107
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :108
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :109
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :110
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :111
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :112
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :113
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :114
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :115
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :116
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :117
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :118
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :119
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :120
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :121
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :122
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :123
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :124
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :125
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :126
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :127
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :128
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :129
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :130
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :131
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :132
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :133
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :134
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :135
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :136
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :137
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :138
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :139
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :140
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :141
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :142
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :143
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :144
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :145
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :146
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :147
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :148
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :149
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :150
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :151
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :152
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :153
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :154
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :155
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :156
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :157
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :158
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :159
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :160
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :161
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :162
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :163
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :164
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :165
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :166
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :167
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :168
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :169
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :170
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :171
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :172
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :173
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :174
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :175
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :176
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :177
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :178
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :179
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :180
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :181
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :182
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :183
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :184
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :185
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :186
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :187
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :188
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :189
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :190
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :191
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :192
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :193
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :194
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :195
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :196
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :197
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :198
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :199
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :200
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :201
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :202
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :203
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :204
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :205
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :206
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :207
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :208
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :209
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :210
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :211
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :212
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :213
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :214
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :215
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :216
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :217
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :218
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :219
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :220
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :221
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :222
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :223
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :224
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :225
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :226
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :227
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :228
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :229
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :230
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :231
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :232
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :233
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :234
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :235
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :236
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :237
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :238
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :239
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :240
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :241
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :242
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :243
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :244
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :245
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :246
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :247
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :248
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :249
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :250
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :251
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :252
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :253
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :254
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :255
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :256
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :257
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :258
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :259
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :260
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :261
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :262
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :263
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :264
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :265
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :266
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :267
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :268
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :269
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :270
+In RW
+writing 5
+In MA
+In OF
+lallalalalaaaaa false
+***** PRINTING CONFLICT OF - EX  true
+****** PRINTING CONFLICT OF - MA: false
+BC TAKEN false
+
+ 
+CYCLE :271
+In RW
+writing 5
+In MA
+In OF/home/srihari/Desktop/CA_Lab4_SRIHARI

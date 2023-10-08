@@ -5,7 +5,7 @@ public class OF_EX_LatchType {
 	// Flag for control
 	public  boolean EX_enable;
 
-	int OF_EX_instruction_in_integer =0; 
+	int OF_EX_instruction_in_integer = -1082130432; 
 
 
 	public void set_OF_EX_instruction_in_integer(int x){

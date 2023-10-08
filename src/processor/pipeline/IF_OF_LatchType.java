@@ -5,7 +5,7 @@ public class IF_OF_LatchType {
 	boolean OF_enable;
 	int INSTRUCTION;
 
-	int IF_OF_instruction_in_integer =0 ;
+	int IF_OF_instruction_in_integer = -1082130432 ;
 
 	public static boolean check ;
 
