@@ -60,8 +60,11 @@ public class InstructionFetch {
 
 				IF_OF_Latch.setInstruction(newInstruction);
 				IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
-	
-				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
+
+
+
+	if (!Variables.sim_complete)
+				{containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);}
 				IF_OF_LatchType.check = false;
 
 				return;
@@ -80,10 +83,14 @@ public class InstructionFetch {
 			IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
 
 			Variables.final_PC = currentPC;
-			containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
+			if (!Variables.sim_complete){
+			containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);}
 			
 			// IF_EnableLatch.setIF_enable(false);
 
+			// if (Variables.sim_complete){
+			// 	containingProcessor.getRegisterFile().setProgramCounter(Variables.final_PC);
+			// }
 	
 			IF_OF_Latch.setOF_enable(true);}
 

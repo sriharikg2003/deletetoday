@@ -120,8 +120,9 @@ public class Execute {
 					}
 				}
 
+				if (!Variables.sim_complete){
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
-
+}
 			}
 
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 2) {
@@ -191,8 +192,10 @@ public class Execute {
 			// jmp / jump
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 1) {
 				int PC = BRANCH_TARGET;
-				containingProcessor.getRegisterFile().setProgramCounter(PC);
 
+				if (!Variables.sim_complete){
+				containingProcessor.getRegisterFile().setProgramCounter(PC);
+}
 				local_branch_taken = true;
 
 

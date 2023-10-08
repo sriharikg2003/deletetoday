@@ -20,16 +20,16 @@ public class RegisterWrite {
 		if (MA_RW_Latch.isRW_enable())
 		{
 
-			
-
-
 			System.out.println("In RW");
 			String OPCODE = MA_RW_Latch.getOpCode();
 	
 			if (OPCODE.equals("11101"))
 			{
-				System.out.println("In RW WRITE PC **************************** "+ Variables.final_PC);
-				containingProcessor.getRegisterFile().setProgramCounter(Variables.final_PC-1);
+				System.out.println("In RW WRITE PC **************************** "+ (Variables.final_PC-1));
+				
+				Variables.sim_complete = true;
+				Variables.final_PC = Variables.final_PC-1;
+				containingProcessor.getRegisterFile().setProgramCounter(Variables.final_PC);
 				Simulator.setSimulationComplete(true);
 			}
 	

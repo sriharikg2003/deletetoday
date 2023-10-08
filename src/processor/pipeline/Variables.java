@@ -9,6 +9,7 @@ public class Variables {
     public static int CONFLICT_PC_OF ;
     
 
+    public static boolean sim_complete = false;
     public static int final_PC = 0;
 
     // public int get_CONFLICT_PC_OF(){
