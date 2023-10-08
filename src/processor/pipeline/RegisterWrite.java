@@ -28,6 +28,8 @@ public class RegisterWrite {
 	
 			if (OPCODE.equals("11101"))
 			{
+				System.out.println("In RW WRITE PC **************************** "+ Variables.final_PC);
+				containingProcessor.getRegisterFile().setProgramCounter(Variables.final_PC-1);
 				Simulator.setSimulationComplete(true);
 			}
 	
