@@ -17,6 +17,7 @@ public class OperandFetch {
 	EX_MA_LatchType EX_MA_Latch;
 	EX_IF_LatchType EX_IF_Latch;
 	IF_EnableLatchType IF_EnableLatch;
+	MA_RW_LatchType MA_RW_Latch;
 
 	public static Map<String, Integer> INSTRUCTION_TYPE = new HashMap<String, Integer>() {
 		{
@@ -69,11 +70,12 @@ public class OperandFetch {
 		return BinaryString;
 	}
 
-	public OperandFetch(Processor containingProcessor, IF_OF_LatchType iF_OF_Latch, OF_EX_LatchType oF_EX_Latch,EX_MA_LatchType EX_MA_Latch) {
+	public OperandFetch(Processor containingProcessor, IF_OF_LatchType iF_OF_Latch, OF_EX_LatchType oF_EX_Latch,EX_MA_LatchType EX_MA_Latch ,MA_RW_LatchType MA_RW_Latch) {
 		this.containingProcessor = containingProcessor;
 		this.IF_OF_Latch = iF_OF_Latch;
 		this.OF_EX_Latch = oF_EX_Latch;
 		this.EX_MA_Latch = EX_MA_Latch;
+		this.MA_RW_Latch = MA_RW_Latch;
 	}
 
 	String add = "00000"; // Opcode
@@ -116,7 +118,18 @@ public class OperandFetch {
 		String Aopcode = A.substring(0, 5);
 		String Bopcode = B.substring(0, 5);
 	
-		if (a==-402653184 || b==402653184){
+		System.out.println("\n"+A +" " +a );
+		System.out.println(B + " " + b + "\n");
+
+
+
+
+		if (a==-402653184 || b==-402653184){
+			return false;
+		}
+
+		if (a== -134217728 || b == -134217728){
+			// 11111000000 which never comes
 			return false;
 		}
 
@@ -195,7 +208,7 @@ public class OperandFetch {
 		// Ass4
 		// a : Instruction in OF
 		// b : Instruction in EX
-
+		System.out.println("kkkkkkkkkkkkkkkkkkkkk " + binaryToInt("11111000000000000000000000000000"));
 
 		System.out.println("In OF");
 
@@ -212,7 +225,7 @@ public class OperandFetch {
 			System.out.println("***** PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
 
 			
-			System.out.println("****** PRINTING CONFLICT OF - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer));
+			System.out.println("****** PRINTING CONFLICT OF - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer));
 			
 
 

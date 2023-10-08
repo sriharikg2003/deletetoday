@@ -10,7 +10,7 @@ public class MA_RW_LatchType {
 	boolean IS_WRITE_BACK;
 	int DESTINATION;
 
-	int MA_RW_instruction_in_integer = -1082130432; 
+	int MA_RW_instruction_in_integer = -134217728; 
 
 	public void set_MA_RW_instruction_in_integer(int x){
 		MA_RW_instruction_in_integer = x;

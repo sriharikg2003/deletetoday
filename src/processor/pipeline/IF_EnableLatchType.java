@@ -4,7 +4,7 @@ public class IF_EnableLatchType {
 	
 	public static boolean IF_enable;
 
-	int IF_Ena_instruction_in_integer = -1082130432; 
+	int IF_Ena_instruction_in_integer = -134217728; 
 
 
 
