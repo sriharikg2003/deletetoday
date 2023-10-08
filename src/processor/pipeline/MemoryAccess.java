@@ -18,9 +18,14 @@ public class MemoryAccess {
 	{
 		if(EX_MA_Latch.isMA_enable()){
 
-			System.out.println("In MA");
+			System.out.println("In MA SS");
+
+
 
 			int ALU_RESULT = EX_MA_Latch.getAluresult();
+			System.out.println("MA has ALU RESULT " + ALU_RESULT);
+
+
 			int DESTINATION = EX_MA_Latch.getDestination();
 			boolean IS_WRITE_BACK = EX_MA_Latch.getWriteBack();
 			String OPCODE = EX_MA_Latch.getOpCode();

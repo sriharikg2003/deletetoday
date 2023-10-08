@@ -5,8 +5,11 @@ import javax.sound.midi.SysexMessage;
 public class Variables {
     public static int Branch_counter=0;
 
+    public static boolean set_next_time = false;
     public static int CONFLICT_PC_OF ;
     
+
+    public static int final_PC = 0;
 
     // public int get_CONFLICT_PC_OF(){
     //     return CONFLICT_PC_OF;

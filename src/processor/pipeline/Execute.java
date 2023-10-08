@@ -64,7 +64,7 @@ public class Execute {
 	
 
 			int BRANCH_TARGET = OF_EX_Latch.getBranchTarget();
-			System.out.println("In EX"+OPCODE + "\n" +  containingProcessor.getRegisterFile().getProgramCounter() + " BC " + BRANCH_TARGET );
+			System.out.println("In EX " +OPCODE + "\n" +  containingProcessor.getRegisterFile().getProgramCounter() + " BC " + BRANCH_TARGET );
 			int rs1 = OF_EX_Latch.getOp1();
 			int rs2 = OF_EX_Latch.getOp2();
 			int rdval = OF_EX_Latch.getRd();
@@ -107,6 +107,7 @@ public class Execute {
 				} else if (OPCODE.equals("11011")) { // blt
 					if (rs1 < rdval) {
 						PC = BRANCH_TARGET;
+						local_branch_taken = true;
 
 
 					}

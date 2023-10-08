@@ -22,7 +22,7 @@ public class InstructionFetch {
 
 
 
-		System.out.println("BC TAKEN " + Variables.branch_taken_global_variable);
+		// System.out.println("BC TAKEN " + Variables.branch_taken_global_variable);
 
 		if (Variables.branch_taken_global_variable){
 			
@@ -41,8 +41,22 @@ public class InstructionFetch {
 
 			if (IF_OF_LatchType.check){
 
+				if (Variables.set_next_time){
+					Variables.set_next_time = false;
+					System.out.println("Will set next time ");
+					return;
+				}
+
+
+				
 				int currentPC = Variables.CONFLICT_PC_OF;
 				int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
+
+
+				System.out.println("Because of Conflict " + currentPC + " " 
+				 + newInstruction);
+
+
 
 				IF_OF_Latch.setInstruction(newInstruction);
 				IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
@@ -74,6 +88,7 @@ public class InstructionFetch {
 			IF_OF_Latch.setOF_enable(true);}
 
 			else{
+				System.out.println("0 ins in IF");
 				return;
 			}
 		}

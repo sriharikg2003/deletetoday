@@ -123,8 +123,11 @@ public class OperandFetch {
 
 
 
-
+		if (a==0 || b==0){
+			return false;
+		}
 		if (a==-402653184 || b==-402653184){
+			// end ins
 			return false;
 		}
 
@@ -208,11 +211,10 @@ public class OperandFetch {
 		// Ass4
 		// a : Instruction in OF
 		// b : Instruction in EX
-		System.out.println("kkkkkkkkkkkkkkkkkkkkk " + binaryToInt("11111000000000000000000000000000"));
+		// System.out.println("kkkkkkkkkkkkkkkkkkkkk " + binaryToInt("11111000000000000000000000000000"));
 
-		System.out.println("In OF");
 
-		System.out.println("lallalalalaaaaa " + this.checkConflict(-754974720, -754974720));
+		// System.out.println("lallalalalaaaaa " + this.checkConflict(-754974720, -754974720));
 		// IF_OF_Latch.enable_IF_OF_Later();
 
 		if (Variables.branch_taken_global_variable) {
@@ -220,6 +222,7 @@ public class OperandFetch {
 		}
 
 		if (IF_OF_Latch.isOF_enable()) {
+			System.out.println("In OF");
 
 
 			System.out.println("***** PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
@@ -227,12 +230,6 @@ public class OperandFetch {
 			
 			System.out.println("****** PRINTING CONFLICT OF - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer));
 			
-
-
-
-
-			
-
 
 
 			// *********************
@@ -244,19 +241,19 @@ public class OperandFetch {
 			// Control unit
 			String OPCODE = INSTRUCTION.substring(0, 5);
 
-
-
+			System.out.println("PC in OF " + PC);
 			if ( (this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) )
 			||
-			( this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer))
+			this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer)
 			
 			)
 			{
 
 				
-
-				Variables.CONFLICT_PC_OF = PC;
-
+				System.out.println("Uuuuu Conflict ****");
+				System.out.println("Will store this for future use ****" +PC + " Ins : " +containingProcessor.getMainMemory().getWord(PC-1) + " and it has to be actually " + IF_OF_Latch.IF_OF_instruction_in_integer);
+				Variables.CONFLICT_PC_OF = PC-1;
+				Variables.set_next_time = true;
 				IF_OF_Latch.null_and_void_if_of();
 				OF_EX_Latch.null_and_void_ex_of();
 				
