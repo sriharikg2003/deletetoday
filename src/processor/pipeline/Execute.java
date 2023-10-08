@@ -89,13 +89,17 @@ public class Execute {
 			boolean local_branch_taken = false;
 			// beg, bne, blt, bgt and not jump
 			if (INSTRUCTION_TYPE.get(OPCODE) == 6) {
+
+
+
+
+				System.out.println("OPCDE   "+ OPCODE + "   rs1 " + rs1 + " rdval " + rdval );
 				int PC = containingProcessor.getRegisterFile().getProgramCounter();
 
 				if (OPCODE.equals("11001")) { // beq
 					if (rs1 == rdval) {
 						PC = BRANCH_TARGET;
 						local_branch_taken = true;
-
 					}
 				} else if (OPCODE.equals("11010")) { // bne
 					if (rs1 != rdval) {
@@ -121,8 +125,9 @@ public class Execute {
 				}
 
 			
-				containingProcessor.getRegisterFile().setProgramCounter(PC);
 
+				containingProcessor.getRegisterFile().setProgramCounter(PC);
+				System.out.println("PC IS SET TO IN EX"  + containingProcessor.getRegisterFile().getProgramCounter());
 			}
 
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 2) {
@@ -194,7 +199,7 @@ public class Execute {
 				int PC = BRANCH_TARGET;
 
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
-
+				System.out.println("PC IS SET TO IN EX"  + containingProcessor.getRegisterFile().getProgramCounter());
 				local_branch_taken = true;
 
 
@@ -222,6 +227,8 @@ public class Execute {
 			  Variables.branch_taken_global_variable = 	local_branch_taken;
 
 			  if (local_branch_taken){
+
+				System.out.println("YES BRANCH TAKEN BRo ************************");
 				OF_EX_Latch.null_and_void_ex_of();
 			  }
 			// OF_EX_Latch.setEX_enable(false);

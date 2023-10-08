@@ -1,0 +1,46 @@
+public boolean usualDependency(Instruction latchInst, Instruction OFInst)
+	{
+		return latchInst.getOperationType() != OperationType.store && 
+			(latchInst.getDestinationOperand().getValue() == OFInst.getSourceOperand1().getValue() || 
+			latchInst.getDestinationOperand().getValue() == OFInst.getSourceOperand2().getValue());
+	}
+
+	// An instruction before store writes in a register used by store instruction.
+	public boolean storeDependency(Instruction latchInst, Instruction OFInst)
+	{
+		return OFInst.getOperationType() == OperationType.store && 
+			(latchInst.getDestinationOperand().getValue() == OFInst.getSourceOperand1().getValue() || 
+			latchInst.getDestinationOperand().getValue() == OFInst.getDestinationOperand().getValue());
+	}
+
+	// A load instruction occuring before a store instruction, puts value in a register used by store instruction.
+	public boolean loadStoreDependency(Instruction latchInst, Instruction OFInst)
+	{
+		return latchInst.getOperationType() == OperationType.load &&
+		OFInst.getOperationType() == OperationType.store &&
+		latchInst.getDestinationOperand() == OFInst.getSourceOperand1();
+	}
+
+	public boolean OF_EX_conflict(OF_EX_LatchType OF_EX_Latch, Instruction inst, boolean isDependencyPossible)
+	{
+		return OF_EX_Latch.EX_enable && isDependencyPossible && inst != null && 
+		OF_EX_Latch.getInstruction() != null && OF_EX_Latch.getInstruction().getOperationType() != OperationType.end && 
+		OF_EX_Latch.getInstruction().getDestinationOperand().getOperandType() == OperandType.Register && 
+		(usualDependency(OF_EX_Latch.getInstruction(), inst) || storeDependency(OF_EX_Latch.getInstruction(), inst) || loadStoreDependency(OF_EX_Latch.getInstruction(), inst));
+	}
+	
+	public boolean OF_MA_conflict(EX_MA_LatchType EX_MA_Latch, Instruction inst, boolean isDependencyPossible)
+	{
+		return EX_MA_Latch.MA_enable && isDependencyPossible && inst != null &&
+			EX_MA_Latch.getInstruction() != null && EX_MA_Latch.getInstruction().getOperationType() != OperationType.end && 
+			EX_MA_Latch.getInstruction().getDestinationOperand().getOperandType() == OperandType.Register &&
+			(usualDependency(EX_MA_Latch.getInstruction(), inst) || storeDependency(EX_MA_Latch.getInstruction(), inst) || loadStoreDependency(EX_MA_Latch.getInstruction(), inst));
+	}
+
+	public boolean OF_RW_conflict(MA_RW_LatchType MA_RW_Latch, Instruction inst, boolean isDependencyPossible)
+	{
+		return MA_RW_Latch.RW_enable && isDependencyPossible && inst != null &&
+			MA_RW_Latch.getInstruction() != null && MA_RW_Latch.getInstruction().getOperationType() != OperationType.end && 
+			MA_RW_Latch.getInstruction().getDestinationOperand().getOperandType() == OperandType.Register &&
+			(usualDependency(MA_RW_Latch.getInstruction(), inst) || storeDependency(MA_RW_Latch.getInstruction(), inst) || loadStoreDependency(MA_RW_Latch.getInstruction(), inst));
+	}

@@ -118,8 +118,8 @@ public class OperandFetch {
 		String Aopcode = A.substring(0, 5);
 		String Bopcode = B.substring(0, 5);
 	
-		System.out.println("\n"+A +" " +a );
-		System.out.println(B + " " + b + "\n");
+		// System.out.println("\n"+A +" " +a );
+		// System.out.println(B + " " + b + "\n");
 
 
 
@@ -132,13 +132,14 @@ public class OperandFetch {
 		}
 
 		if (a== -134217728 || b == -134217728){
+			// default instruction 
 			// 11111000000 which never comes
 			return false;
 		}
 
 		int Ars1 = (int) Long.parseLong(A.substring(5, 10), 2);
 		int AimmBit = 0;
-		int Ars2 = 31;
+		int Ars2  = (int) Long.parseLong(A.substring(10, 15), 2);;
 		int Ard = 31;
 	
 		if (INSTRUCTION_TYPE.get(Aopcode) == 3) {
@@ -151,8 +152,24 @@ public class OperandFetch {
 			// R type instruction
 			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 			AimmBit = 1;
+			System.out.println( Ard + " ARD llllllllllllllllllll");
+
+
 		}
 	
+
+		if (INSTRUCTION_TYPE.get(Aopcode) == 6) {
+			// R type instruction
+			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
+			AimmBit = 1;
+			System.out.println( Ard + " ARD llllllllllllllllllll");
+
+
+		}
+	
+
+
+
 		int Brd = 31;
 		int BimmBit = 0;
 	
@@ -169,7 +186,26 @@ public class OperandFetch {
 	
 		// Check if Aopcode is one of "beq", "bne", "blt", or "bgt"
 		if (Aopcode.equals("11001") || Aopcode.equals("11010") || Aopcode.equals("11011") || Aopcode.equals("11100")) {
+
+					System.out.println(Aopcode  + " " + Brd + " " + Ars1 + " " + Ard + " " + "Outside cond");
+
+				if (Brd == Ars1 || Brd == Ard){
+
+					System.out.println("Inside cond");
+
+					return true;
+
+				}
+
+
+
+
+
+			// System.out.println("Branch but not checked for dependecy " + a);
 			return false;
+
+
+
 		}
 	
 		// Check if Bopcode is one of "store", "beq", "bne", "blt", or "bgt"
@@ -201,9 +237,11 @@ public class OperandFetch {
 	
 		return false;
 	}
+
+
+
+
 	
-
-
 
 
 	public void performOF() {
@@ -229,10 +267,17 @@ public class OperandFetch {
 
 			
 			System.out.println("****** PRINTING CONFLICT OF - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer));
+
+			// System.out.println("****** PRINTING CONFLICT EX - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer));
+			System.out.println("\nIF OF "+IF_OF_Latch.IF_OF_instruction_in_integer);
 			
+			System.out.println("\nOF EX "+ OF_EX_Latch.OF_EX_instruction_in_integer);
+
+			System.out.println("\nEX MA "+EX_MA_Latch.EX_MA_instruction_in_integer);
 
 
-			// *********************
+
+			// *******************
 
 			// ********************************
 			int PC = containingProcessor.getRegisterFile().getProgramCounter();
@@ -241,7 +286,21 @@ public class OperandFetch {
 			// Control unit
 			String OPCODE = INSTRUCTION.substring(0, 5);
 
+
+
 			System.out.println("PC in OF " + PC);
+			// if ( (this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) )
+			// ||
+
+			// this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer)
+			// ||
+			// this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer)
+			
+			
+			// )
+
+
+
 			if ( (this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) )
 			||
 			this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer)
@@ -294,6 +353,11 @@ public class OperandFetch {
 
 			// Calculate the branch target
 			int branchTarget = OFFSET + PC - 1;
+			System.out.println("\nPC is  " + PC);
+			System.out.println("Offset is  " + OFFSET);
+
+
+			System.out.println("Branch target  " + branchTarget+"\n");
 			OF_EX_Latch.setBranchTarget(branchTarget);
 
 			// Set op1
