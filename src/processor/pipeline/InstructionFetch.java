@@ -64,7 +64,6 @@ public class InstructionFetch {
 				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 				IF_OF_LatchType.check = false;
 
-
 				return;
 			}
 
