@@ -77,12 +77,6 @@ public class Execute {
 
 
 
-			// try {
-			// 	System.out.println("PRINTING CONFLICT OF - MA: " +  EX_MA_Latch.EX_MA_instruction_in_integer);
-			// } catch (Exception e) {
-			// 	// Handle the exception here
-			// 	e.printStackTrace(); // Print the stack trace for debugging
-			// }
 			
 
 			boolean IS_WRITE_BACK = false;
@@ -207,13 +201,7 @@ public class Execute {
 
 			
 
-			// else if (INSTRUCTION_TYPE.get(OPCODE) == 0) {
-			// // int PC = BRANCH_TARGET;
-			// // containingProcessor.getRegisterFile().setProgramCounter(PC);
-			// // OF_EX_Latch.setBranchTaken(true);
-			// System.out.println("********************************");
-			// IF_EnableLatch.setIF_enable(false);
-			// }
+			
 
 			// set all the things in the next latch.
 			EX_MA_Latch.setOpCode(OPCODE);

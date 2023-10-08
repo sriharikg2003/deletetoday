@@ -193,15 +193,8 @@ public class OperandFetch {
 
 				}
 
-
-
-
-
 			// System.out.println("Branch but not checked for dependecy " + a);
 			return false;
-
-
-
 		}
 	
 		// Check if Bopcode is one of "store", "beq", "bne", "blt", or "bgt"
@@ -233,11 +226,6 @@ public class OperandFetch {
 	
 		return false;
 	}
-
-
-
-
-	
 
 
 	public void performOF() {
@@ -285,15 +273,7 @@ public class OperandFetch {
 
 
 			System.out.println("PC in OF " + PC);
-			// if ( (this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) )
-			// ||
-
-			// this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer)
-			// ||
-			// this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer)
-			
-			
-			// )
+		
 
 
 

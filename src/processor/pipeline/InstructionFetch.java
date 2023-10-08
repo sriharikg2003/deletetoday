@@ -79,11 +79,7 @@ public class InstructionFetch {
 					containingProcessor.getRegisterFile().setProgramCounter(currentPC +1 );
 
 
-				// IF_EnableLatch.setIF_enable(false);
-
-				// if (Variables.sim_complete){
-				// containingProcessor.getRegisterFile().setProgramCounter(Variables.final_PC);
-				// }
+				
 
 				IF_OF_Latch.setOF_enable(true);
 			}

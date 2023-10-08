@@ -12,16 +12,6 @@ public class Variables {
     public static boolean sim_complete = false;
     public static int final_PC = 0;
 
-    // public int get_CONFLICT_PC_OF(){
-    //     return CONFLICT_PC_OF;
-    // }
-
-
-    // public void set_CONFLICT_PC_OF(int x ){
-    //      CONFLICT_PC_OF = x;
-    // }
-
-
 
     public static boolean branch_taken_global_variable;
     public static void increement_Branch_counter() {
