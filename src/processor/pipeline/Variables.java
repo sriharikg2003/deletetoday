@@ -36,4 +36,11 @@ public class Variables {
     public static int getBranch_counter(){
         return Branch_counter;
     }
+
+
+    public static int NO_OF_CYCLES = 0;
+    public static int BRANCH_LOCKED = 0;
+    public static int DATA_CLASHES = 0;
+    public static int NO_OF_INSTRUCTIONS_FETCHED = 0;
+
 }

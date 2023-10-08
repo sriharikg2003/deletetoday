@@ -73,6 +73,7 @@ public class Simulator {
 			DYNAMIC_INSTRUCTIONS++;
 			System.out.println("\n ");
 
+			Variables.NO_OF_CYCLES+=1;
 			Clock.incrementClock();
 		}
 

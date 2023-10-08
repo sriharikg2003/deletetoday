@@ -25,7 +25,6 @@ public class InstructionFetch {
 		if (Variables.branch_taken_global_variable) {
 
 			IF_OF_Latch.null_and_void_if_of();
-
 			Variables.branch_taken_global_variable = false;
 			return;
 		}
@@ -64,6 +63,8 @@ public class InstructionFetch {
 			if (newInstruction != 0) {
 				System.out.println(currentPC + " lll " + containingProcessor.getMainMemory().getWord(currentPC));
 
+
+				Variables.NO_OF_INSTRUCTIONS_FETCHED +=1;
 				IF_OF_Latch.setInstruction(newInstruction);
 				IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
 

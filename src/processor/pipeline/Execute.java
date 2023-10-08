@@ -228,7 +228,8 @@ public class Execute {
 
 			  if (local_branch_taken){
 
-				System.out.println("YES BRANCH TAKEN BRo ************************");
+				System.out.println("YES BRANCH TAKEN  ************************");
+				Variables.BRANCH_LOCKED += 1;
 				OF_EX_Latch.null_and_void_ex_of();
 			  }
 			// OF_EX_Latch.setEX_enable(false);

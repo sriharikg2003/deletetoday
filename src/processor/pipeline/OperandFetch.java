@@ -153,8 +153,6 @@ public class OperandFetch {
 			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 			AimmBit = 1;
 			System.out.println( Ard + " ARD llllllllllllllllllll");
-
-
 		}
 	
 
@@ -163,8 +161,6 @@ public class OperandFetch {
 			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 			AimmBit = 1;
 			System.out.println( Ard + " ARD llllllllllllllllllll");
-
-
 		}
 	
 
@@ -309,6 +305,8 @@ public class OperandFetch {
 			{
 
 				
+
+				Variables.DATA_CLASHES +=1;
 				System.out.println("Uuuuu Conflict ****");
 				System.out.println("Will store this for future use ****" +PC + " Ins : " +containingProcessor.getMainMemory().getWord(PC-1) + " and it has to be actually " + IF_OF_Latch.IF_OF_instruction_in_integer);
 				Variables.CONFLICT_PC_OF = PC-1;
