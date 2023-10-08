@@ -27,6 +27,8 @@ public class MemoryAccess {
 			int rs1 = EX_MA_Latch.getrs1();
 			int LOAD_RESULT = 0;
 
+			MA_RW_Latch.MA_RW_instruction_in_integer  = EX_MA_Latch.EX_MA_instruction_in_integer;
+
 // LOAD 
 			if(OPCODE.equals("10110")){
 				LOAD_RESULT= containingProcessor.getMainMemory().getWord(ALU_RESULT);

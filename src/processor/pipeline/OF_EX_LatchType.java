@@ -4,6 +4,10 @@ public class OF_EX_LatchType {
 
 	// Flag for control
 	public  boolean EX_enable;
+
+	public  int OF_EX_instruction_in_integer ; 
+
+
 	int BRANCH_TARGET;
 	String OPCODE;
 	int IMMEDIATE;

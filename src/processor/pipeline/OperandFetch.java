@@ -68,33 +68,150 @@ public class OperandFetch {
 		this.OF_EX_Latch = oF_EX_Latch;
 	}
 
-	public void performOF() {
+	String add = "00000"; // Opcode
+	String addi = "00001"; // Opcode
+	String sub = "00010"; // Opcode
+	String subi = "00011"; // Opcode
+	String mul = "00100"; // Opcode
+	String muli = "00101"; // Opcode
+	String div = "00110"; // Opcode
+	String divi = "00111"; // Opcode
+	String andOp = "01000"; // Opcode
+	String andi = "01001"; // Opcode
+	String orOp = "01010"; // Opcode
+	String ori = "01011"; // Opcode
+	String xorOp = "01100"; // Opcode
+	String xori = "01101"; // Opcode
+	String slt = "01110"; // Opcode
+	String slti = "01111"; // Opcode
+	String sll = "10000"; // Opcode
+	String slli = "10001"; // Opcode
+	String srl = "10010"; // Opcode
+	String srli = "10011"; // Opcode
+	String sra = "10100"; // Opcode
+	String srai = "10101"; // Opcode
+	String load = "10110"; // Opcode
+	String store = "10111"; // Opcode
+	String jmp = "11000"; // Opcode
+	String beq = "11001"; // Opcode
+	String bne = "11010"; // Opcode
+	String blt = "11011"; // Opcode
+	String bgt = "11100"; // Opcode
+	String end = "11101"; // Opcode
 
 
-// Ass4
 
-		// IF_OF_Latch.enable_IF_OF_Later();
 
-			if (Variables.branch_taken_global_variable){
-			return;
+	public boolean checkConflict(int a, int b) {
+		String A = binaryofint(a);
+		String B = binaryofint(b);
+		String Aopcode = A.substring(0, 5);
+		String Bopcode = B.substring(0, 5);
+	
+		int Ars1 = (int) Long.parseLong(A.substring(5, 10), 2);
+		int AimmBit = 0;
+		int Ars2 = 31;
+		int Ard = 31;
+	
+		if (INSTRUCTION_TYPE.get(Aopcode) == 3) {
+			// R3 type instruction
+			Ars2 = (int) Long.parseLong(A.substring(10, 15), 2);
+			Ard = (int) Long.parseLong(A.substring(15, 20), 2);
+		}
+	
+		if (INSTRUCTION_TYPE.get(Aopcode) == 2) {
+			// R type instruction
+			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
+			AimmBit = 1;
+		}
+	
+		int Brd = 31;
+		int BimmBit = 0;
+	
+		if (INSTRUCTION_TYPE.get(Bopcode) == 3) {
+			// R3 type instruction
+			Brd = (int) Long.parseLong(B.substring(15, 20), 2);
+		}
+	
+		if (INSTRUCTION_TYPE.get(Bopcode) == 2) {
+			// R type instruction
+			Brd = (int) Long.parseLong(B.substring(10, 15), 2);
+			BimmBit = 1;
+		}
+	
+		// Check if Aopcode is one of "beq", "bne", "blt", or "bgt"
+		if (Aopcode.equals("11001") || Aopcode.equals("11010") || Aopcode.equals("11011") || Aopcode.equals("11100")) {
+			return false;
+		}
+	
+		// Check if Bopcode is one of "store", "beq", "bne", "blt", or "bgt"
+		if (Bopcode.equals("10111") || Bopcode.equals("11001") || Bopcode.equals("11010") || Bopcode.equals("11011") || Bopcode.equals("11100")) {
+			return false;
+		}
+	
+		int src1 = Ars1;
+		int src2 = Ars2;
+	
+		if (Aopcode.equals("10111")) {
+			src2 = Ard;
+		}
+	
+		int dest = Brd;
+		boolean hasSrc2 = true;
+	
+		if (!Aopcode.equals("10111")) {
+			if (AimmBit == 1) {
+				hasSrc2 = false;
 			}
+		}
+	
+		if (src1 == dest) {
+			return true;
+		} else if (hasSrc2 && src2 == dest) {
+			return true;
+		}
+	
+		return false;
+	}
 	
 
 
-		 if (IF_OF_Latch.isOF_enable()) {
 
+
+	public void performOF() {
+
+		// Ass4
+		// a : Instruction in OF
+		// b : Instruction in EX
+
+
+		// System.out.println("PRINTING CONFLICT " + this.checkConflict(134873188,693371880) );
+
+		
+
+		// IF_OF_Latch.enable_IF_OF_Later();
+
+		if (Variables.branch_taken_global_variable) {
+			return;
+		}
+
+		if (IF_OF_Latch.isOF_enable()) {
 
 			System.out.println("In OF");
 
+			// *********************
+
+			// ********************************
 			int PC = containingProcessor.getRegisterFile().getProgramCounter();
 			String INSTRUCTION = binaryofint(IF_OF_Latch.getInstruction());
 
 			// Control unit
 			String OPCODE = INSTRUCTION.substring(0, 5);
 
-
 			OF_EX_Latch.setOpCode(OPCODE);
 
+
+			OF_EX_Latch.OF_EX_instruction_in_integer = IF_OF_Latch.getInstruction();
 			// Immediate
 			int immediate17 = binaryToInt(INSTRUCTION.substring(15));
 
@@ -146,7 +263,7 @@ public class OperandFetch {
 						(int) Long.parseLong(INSTRUCTION.substring(10, 15), 2));
 				int sourceRegIndexRs1 = (int) Long.parseLong(INSTRUCTION.substring(5, 10), 2);
 				op2 = containingProcessor.getRegisterFile().getValue(sourceRegIndexRs1);
-				
+
 			} else {
 				// Other instructions
 				op2 = 0;
@@ -158,35 +275,31 @@ public class OperandFetch {
 			OF_EX_Latch.setRd(rd);
 			OF_EX_Latch.setDestination(destRegIndex);
 
-		
-
 			// IF_OF_Latch.setOF_enable(false);
 			OF_EX_Latch.setEX_enable(true);
 		}
 
+		// else{
 
-	// 	else{
+		// if(OF_EX_Latch.isBranchTaken){
+		// System.out.println("Yes bracnh is taken");
+		// // OF_EX_Latch.setBranchTaken(false);
+		// // IF_OF_Latch.setOF_enable(false);
+		// // OF_EX_Latch.setEX_enable(false);
+		// // OF_EX_Latch.setEX_enable( false);
+		// OF_EX_Latch.EX_enable = false;
+		// // System.out.println("ENABLED "+ OF_EX_Latch.isEX_enable());
+		// Variables.Branch_counter = (Variables.Branch_counter+1)%3;
+		// System.out.println(Variables.Branch_counter);
 
-	// 	if(OF_EX_Latch.isBranchTaken){
-	// 		System.out.println("Yes bracnh is taken");
-	// 		// OF_EX_Latch.setBranchTaken(false);
-	// 		// IF_OF_Latch.setOF_enable(false);
-	// 		// OF_EX_Latch.setEX_enable(false);
-	// 		// OF_EX_Latch.setEX_enable( false);
-	// 		OF_EX_Latch.EX_enable = false;
-	// 		// System.out.println("ENABLED "+ OF_EX_Latch.isEX_enable());
-	// 		Variables.Branch_counter = (Variables.Branch_counter+1)%3;
-	// 		System.out.println(Variables.Branch_counter);
+		// if (Variables.Branch_counter==0){
+		// OF_EX_Latch.EX_enable = true;
+		// OF_EX_Latch.isBranchTaken = false;
+		// System.out.println("ENABLED OF_EX");
+		// }
+		// }
 
-
-	// 		if (Variables.Branch_counter==0){
-	// 			OF_EX_Latch.EX_enable = true;
-	// 			OF_EX_Latch.isBranchTaken = false;
-	// 			System.out.println("ENABLED OF_EX");
-	// 		}
-	// 	}
-
-	// 	}
+		// }
 	}
 
 }

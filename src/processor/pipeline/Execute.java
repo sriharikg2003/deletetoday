@@ -71,6 +71,10 @@ public class Execute {
 			int DESTINATION = OF_EX_Latch.getDestination();
 			int ALU_RESULT = 0;
 			int IMMEDIATE = OF_EX_Latch.getImmediate();
+
+
+			EX_MA_Latch.EX_MA_instruction_in_integer = OF_EX_Latch.OF_EX_instruction_in_integer;
+
 			boolean IS_WRITE_BACK = false;
 			boolean local_branch_taken = false;
 			// beg, bne, blt, bgt and not jump

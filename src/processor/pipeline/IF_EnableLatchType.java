@@ -3,7 +3,9 @@ package processor.pipeline;
 public class IF_EnableLatchType {
 	
 	public static boolean IF_enable;
-	
+
+	public  int IF_Ena_instruction_in_integer ; 
+
 	public IF_EnableLatchType()
 	{
 		this.IF_enable = true;

@@ -9,7 +9,10 @@ public class MA_RW_LatchType {
 	int LOAD_RESULT;
 	boolean IS_WRITE_BACK;
 	int DESTINATION;
-	
+
+	public  int MA_RW_instruction_in_integer ; 
+
+
 	public MA_RW_LatchType()
 	{
 		RW_enable = false;

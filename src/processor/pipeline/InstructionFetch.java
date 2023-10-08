@@ -39,6 +39,9 @@ public class InstructionFetch {
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter();
 			int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
 
+
+			IF_OF_Latch.IF_OF_instruction_in_integer = newInstruction;
+
 			if (newInstruction!=0){
 			System.out.println(currentPC + " lll " +containingProcessor.getMainMemory().getWord(currentPC));
 

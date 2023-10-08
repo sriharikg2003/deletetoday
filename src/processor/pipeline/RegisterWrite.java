@@ -19,6 +19,10 @@ public class RegisterWrite {
 	{
 		if (MA_RW_Latch.isRW_enable())
 		{
+
+			
+
+
 			System.out.println("In RW");
 			String OPCODE = MA_RW_Latch.getOpCode();
 	

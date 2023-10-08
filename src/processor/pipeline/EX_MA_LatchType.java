@@ -12,6 +12,9 @@ public class EX_MA_LatchType {
 	String OPCODE;
 	int rs1;
 	
+
+	public int EX_MA_instruction_in_integer ; 
+
 	public EX_MA_LatchType()
 	{
 		MA_enable = false;

@@ -4,6 +4,9 @@ public class IF_OF_LatchType {
 	
 	boolean OF_enable;
 	int INSTRUCTION;
+
+	public  int IF_OF_instruction_in_integer ;
+
 	boolean IF_OF_Later;
 	int ctr = 0;
 	public IF_OF_LatchType()
