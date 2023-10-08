@@ -13,7 +13,16 @@ public class EX_MA_LatchType {
 	int rs1;
 	
 
-	public int EX_MA_instruction_in_integer ; 
+	int EX_MA_instruction_in_integer ; 
+
+	public void set_EX_MA_instruction_in_integer(int x){
+		EX_MA_instruction_in_integer = x;
+	}
+
+
+	public int get_EX_MA_instruction_in_integer(){
+		return EX_MA_instruction_in_integer;
+	}
 
 	public EX_MA_LatchType()
 	{

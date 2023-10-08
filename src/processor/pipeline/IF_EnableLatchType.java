@@ -4,11 +4,22 @@ public class IF_EnableLatchType {
 	
 	public static boolean IF_enable;
 
-	public  int IF_Ena_instruction_in_integer ; 
+	int IF_Ena_instruction_in_integer=0; 
+
+
+
+	public void set_IF_Ena_instruction_in_integer(int x){
+		IF_Ena_instruction_in_integer = x;
+	}
+
+
+	public int get_IF_Ena_instruction_in_integer(){
+		return IF_Ena_instruction_in_integer;
+	}
 
 	public IF_EnableLatchType()
 	{
-		this.IF_enable = true;
+		IF_enable = true;
 	}
 
 	public boolean isIF_enable() {

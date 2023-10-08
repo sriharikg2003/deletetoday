@@ -11,6 +11,10 @@ public class OperandFetch {
 	IF_OF_LatchType IF_OF_Latch;
 	OF_EX_LatchType OF_EX_Latch;
 
+	// Included 
+	EX_MA_LatchType EX_MA_Latch;
+
+
 	public static Map<String, Integer> INSTRUCTION_TYPE = new HashMap<String, Integer>() {
 		{
 			put("00000", 3);
@@ -185,9 +189,7 @@ public class OperandFetch {
 		// b : Instruction in EX
 
 
-		// System.out.println("PRINTING CONFLICT " + this.checkConflict(134873188,693371880) );
 
-		
 
 		// IF_OF_Latch.enable_IF_OF_Later();
 
@@ -198,6 +200,27 @@ public class OperandFetch {
 		if (IF_OF_Latch.isOF_enable()) {
 
 			System.out.println("In OF");
+
+
+			System.out.println("PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
+
+
+
+
+
+
+
+	
+
+			// try {
+			// 	System.out.println("PRINTING CONFLICT OF - MA: " + checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer));
+			// } catch (Exception e) {
+			// 	// Handle the exception here
+			// 	e.printStackTrace(); // Print the stack trace for debugging
+			// }
+			
+
+
 
 			// *********************
 

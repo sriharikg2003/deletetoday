@@ -5,7 +5,17 @@ public class IF_OF_LatchType {
 	boolean OF_enable;
 	int INSTRUCTION;
 
-	public  int IF_OF_instruction_in_integer ;
+	int IF_OF_instruction_in_integer =0 ;
+
+	public void set_IF_OF_instruction_in_integer(int x){
+		IF_OF_instruction_in_integer = x;
+	}
+
+
+	public int get_IF_OF_instruction_in_integer(){
+		return IF_OF_instruction_in_integer;
+	}
+
 
 	boolean IF_OF_Later;
 	int ctr = 0;
@@ -42,6 +52,7 @@ public class IF_OF_LatchType {
 	public void null_and_void_if_of(){
 		 OF_enable = true;
 		INSTRUCTION  = 0;
+		IF_OF_instruction_in_integer = 0;
 		
 	}
 

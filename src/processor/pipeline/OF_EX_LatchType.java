@@ -5,7 +5,17 @@ public class OF_EX_LatchType {
 	// Flag for control
 	public  boolean EX_enable;
 
-	public  int OF_EX_instruction_in_integer ; 
+	int OF_EX_instruction_in_integer =0; 
+
+
+	public void set_OF_EX_instruction_in_integer(int x){
+		OF_EX_instruction_in_integer = x;
+	}
+
+
+	public int get_OF_EX_instruction_in_integer(){
+		return OF_EX_instruction_in_integer;
+	}
 
 
 	int BRANCH_TARGET;
@@ -111,6 +121,7 @@ public class OF_EX_LatchType {
 		 rd = 0;
 		 DESTINATION = 0;
 		 isBranchTaken = false;
+		 OF_EX_instruction_in_integer = 0;
 	}
 
 }
