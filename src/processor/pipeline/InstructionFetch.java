@@ -35,19 +35,37 @@ public class InstructionFetch {
 
 		if(IF_EnableLatch.isIF_enable() )
 		{
+
+
+
+
+			if (IF_OF_LatchType.check){
+
+				int currentPC = Variables.CONFLICT_PC_OF;
+				int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
+
+				IF_OF_Latch.setInstruction(newInstruction);
+				IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
+	
+				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
+				IF_OF_LatchType.check = false;
+
+
+				return;
+			}
+
+
 			System.out.println("In IF");
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter();
 			int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
-
-
-			IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
-
 
 
 			if (newInstruction!=0){
 			System.out.println(currentPC + " lll " +containingProcessor.getMainMemory().getWord(currentPC));
 
 			IF_OF_Latch.setInstruction(newInstruction);
+			IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
+
 			containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 			
 			// IF_EnableLatch.setIF_enable(false);

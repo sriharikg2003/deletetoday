@@ -12,8 +12,11 @@ public class OperandFetch {
 	OF_EX_LatchType OF_EX_Latch;
 
 	// Included 
+	// Processor containingProcessor;
+	// OF_EX_LatchType OF_EX_Latch;
 	EX_MA_LatchType EX_MA_Latch;
-
+	EX_IF_LatchType EX_IF_Latch;
+	IF_EnableLatchType IF_EnableLatch;
 
 	public static Map<String, Integer> INSTRUCTION_TYPE = new HashMap<String, Integer>() {
 		{
@@ -66,10 +69,11 @@ public class OperandFetch {
 		return BinaryString;
 	}
 
-	public OperandFetch(Processor containingProcessor, IF_OF_LatchType iF_OF_Latch, OF_EX_LatchType oF_EX_Latch) {
+	public OperandFetch(Processor containingProcessor, IF_OF_LatchType iF_OF_Latch, OF_EX_LatchType oF_EX_Latch,EX_MA_LatchType EX_MA_Latch) {
 		this.containingProcessor = containingProcessor;
 		this.IF_OF_Latch = iF_OF_Latch;
 		this.OF_EX_Latch = oF_EX_Latch;
+		this.EX_MA_Latch = EX_MA_Latch;
 	}
 
 	String add = "00000"; // Opcode
@@ -189,6 +193,7 @@ public class OperandFetch {
 		// b : Instruction in EX
 
 
+		System.out.println("In OF");
 
 
 		// IF_OF_Latch.enable_IF_OF_Later();
@@ -199,25 +204,16 @@ public class OperandFetch {
 
 		if (IF_OF_Latch.isOF_enable()) {
 
-			System.out.println("In OF");
+
+			System.out.println("***** PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
+
+			
+			System.out.println("****** PRINTING CONFLICT OF - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer));
+			
 
 
-			System.out.println("PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
 
 
-
-
-
-
-
-	
-
-			// try {
-			// 	System.out.println("PRINTING CONFLICT OF - MA: " + checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer));
-			// } catch (Exception e) {
-			// 	// Handle the exception here
-			// 	e.printStackTrace(); // Print the stack trace for debugging
-			// }
 			
 
 
@@ -230,6 +226,28 @@ public class OperandFetch {
 
 			// Control unit
 			String OPCODE = INSTRUCTION.substring(0, 5);
+
+
+
+			if ( (this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) )
+			||
+			( this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer))
+			
+			)
+			{
+
+				Variables.CONFLICT_PC_OF = PC;
+
+				IF_OF_Latch.null_and_void_if_of();
+				OF_EX_Latch.null_and_void_ex_of();
+				
+				IF_OF_LatchType.check = true;
+
+				return;
+			}
+
+
+
 
 			OF_EX_Latch.setOpCode(OPCODE);
 

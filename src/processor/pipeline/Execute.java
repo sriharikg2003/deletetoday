@@ -75,6 +75,16 @@ public class Execute {
 
 			EX_MA_Latch.EX_MA_instruction_in_integer = OF_EX_Latch.OF_EX_instruction_in_integer;
 
+
+
+			// try {
+			// 	System.out.println("PRINTING CONFLICT OF - MA: " +  EX_MA_Latch.EX_MA_instruction_in_integer);
+			// } catch (Exception e) {
+			// 	// Handle the exception here
+			// 	e.printStackTrace(); // Print the stack trace for debugging
+			// }
+			
+
 			boolean IS_WRITE_BACK = false;
 			boolean local_branch_taken = false;
 			// beg, bne, blt, bgt and not jump

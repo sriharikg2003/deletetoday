@@ -7,6 +7,9 @@ public class IF_OF_LatchType {
 
 	int IF_OF_instruction_in_integer =0 ;
 
+	public static boolean check ;
+
+
 	public void set_IF_OF_instruction_in_integer(int x){
 		IF_OF_instruction_in_integer = x;
 	}

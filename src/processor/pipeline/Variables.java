@@ -5,6 +5,19 @@ import javax.sound.midi.SysexMessage;
 public class Variables {
     public static int Branch_counter=0;
 
+    public static int CONFLICT_PC_OF ;
+    
+
+    // public int get_CONFLICT_PC_OF(){
+    //     return CONFLICT_PC_OF;
+    // }
+
+
+    // public void set_CONFLICT_PC_OF(int x ){
+    //      CONFLICT_PC_OF = x;
+    // }
+
+
 
     public static boolean branch_taken_global_variable;
     public static void increement_Branch_counter() {
