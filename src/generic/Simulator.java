@@ -5,6 +5,7 @@ import java.nio.ByteBuffer;
 
 import processor.Clock;
 import processor.Processor;
+import processor.pipeline.Variables ;
 
 public class Simulator {
 
@@ -75,7 +76,11 @@ public class Simulator {
 			Clock.incrementClock();
 		}
 
-		System.out.println(DYNAMIC_INSTRUCTIONS + ": SO MANY");
+	
+
+		System.out.println( DYNAMIC_INSTRUCTIONS + ": SO MANY" + Variables.final_PC);
+
+		processor.getRegisterFile().setProgramCounter(Variables.final_PC);
 
 		// Statistics
 

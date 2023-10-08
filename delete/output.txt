@@ -1,3 +1,3 @@
-Number of static instructions = 9
-Number of dynamic instructions executed = 18
-Number of cycles taken = 18
+Number of static instructions = 16
+Number of dynamic instructions executed = 55
+Number of cycles taken = 55
