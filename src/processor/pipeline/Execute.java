@@ -264,11 +264,16 @@ public class Execute implements Element {
 
 	@Override
 	public void handleEvent(Event e) {
+
+		System.out.println("I CAME IN EVENT HANDLE OF EX  BRO");
+
 		if(EX_MA_Latch.IsMA_busy()){
 			e.setEventTime(Clock.getCurrentTime() + 1);
 			Simulator.getEventQueue().addEvent(e);
 		}
 		else if(e.getEventType() == EventType.ExecutionComplete){
+			System.out.println("I CAME IN EVENT HANDLE else code  EX  BRO");
+
 
 			ExecutionCompleteEvent event = (ExecutionCompleteEvent) e;
 			String OPCODE = event.getOpCode();

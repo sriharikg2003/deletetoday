@@ -21,13 +21,26 @@ public class EventQueue {
 
 	public void processEvents()
 	{
+
+
+		System.out.println("Process events");
+		System.out.println(queue.size());
+		System.out.println(Clock.getCurrentTime());
+		if(queue.isEmpty() == false ){
+			System.out.println("top element's time");
+			System.out.println(queue.peek().getEventTime());
+			
+		}
+
+
 		while(queue.isEmpty() == false && queue.peek().getEventTime() <= Clock.getCurrentTime())
 		{
+			// System.out.println("SIZE OF QUEUE IS  "+ queue.size());
+
 			Event event = queue.poll();
 			System.out.println("PROCESSING EVENT "+ event);
-
 			event.getProcessingElement().handleEvent(event);
-			System.out.println("HANDELD EVENT "+ event);
+			System.out.println("Prcoessed EVENT "+ event + " *ignore");
 
 		}
 	}

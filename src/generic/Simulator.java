@@ -10,7 +10,7 @@ import processor.pipeline.Variables ;
 public class Simulator {
 
 	static Processor processor;
-	static boolean simulationComplete;
+	public static boolean simulationComplete;
 	public static int LINE_NUMBER;
 	static EventQueue eventQueue;
 

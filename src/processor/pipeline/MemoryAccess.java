@@ -27,10 +27,14 @@ public class MemoryAccess implements Element{
 
 	@Override
 	public void handleEvent(Event e) {
+
+		System.out.println("I CAME IN EVENT HANDLE OF MA  BRO");
+
 	
 		System.out.println(e.getEventType());
 		if(e.getEventType() == EventType.MemoryResponse){
 
+			System.out.println("I CAME IN memresponse if  BRO");
 
 			MemoryResponseEvent event = (MemoryResponseEvent)e;
 
@@ -56,13 +60,27 @@ public class MemoryAccess implements Element{
 
 	public void performMA()
 	{
+		System.out.println("In MEM");
+
+// REMOVE THIS FUNCTIOn
+		if (EX_MA_Latch.get_EX_MA_instruction_in_integer() == 135528453){
+
+			System.out.println("TEMP END \n\n****\n\n***\n\n********************************");
+			Simulator.simulationComplete = true;
+			System.out.println("TEMP SIMULATION STOPPED");
+
+			return ;
+		}
+
+
 		if(EX_MA_Latch.isMA_enable()){
 
 			if(EX_MA_Latch.IsMA_busy()){
+				System.out.println("MA IS BUSY");
 				return;
 			}
 
-			System.out.println("In MA SS");
+			System.out.println("In MA NOT BUSY ");
 
 
 
@@ -118,6 +136,9 @@ public class MemoryAccess implements Element{
 
 			else
 			{
+
+				System.out.println("setting MA resuklts to MA_RW_latch");
+
 				MA_RW_Latch.setAluResult(ALU_RESULT);
 			MA_RW_Latch.setLoadResult(LOAD_RESULT);
 			MA_RW_Latch.setWriteBack(IS_WRITE_BACK);

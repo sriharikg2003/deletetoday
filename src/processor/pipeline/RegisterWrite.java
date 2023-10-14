@@ -17,10 +17,12 @@ public class RegisterWrite {
 	
 	public void performRW()
 	{
+		System.out.println("In RW");
+
 		if (MA_RW_Latch.isRW_enable())
 		{
+			System.out.println("In RW enable");
 
-			System.out.println("In RW");
 			String OPCODE = MA_RW_Latch.getOpCode();
 	
 			if (OPCODE.equals("11101"))

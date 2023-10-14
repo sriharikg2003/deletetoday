@@ -11,7 +11,7 @@ public class OperandFetch {
 	IF_OF_LatchType IF_OF_Latch;
 	OF_EX_LatchType OF_EX_Latch;
 
-	// Included 
+	// Included
 	// Processor containingProcessor;
 	// OF_EX_LatchType OF_EX_Latch;
 	EX_MA_LatchType EX_MA_Latch;
@@ -70,7 +70,8 @@ public class OperandFetch {
 		return BinaryString;
 	}
 
-	public OperandFetch(Processor containingProcessor, IF_OF_LatchType iF_OF_Latch, OF_EX_LatchType oF_EX_Latch,EX_MA_LatchType EX_MA_Latch ,MA_RW_LatchType MA_RW_Latch) {
+	public OperandFetch(Processor containingProcessor, IF_OF_LatchType iF_OF_Latch, OF_EX_LatchType oF_EX_Latch,
+			EX_MA_LatchType EX_MA_Latch, MA_RW_LatchType MA_RW_Latch) {
 		this.containingProcessor = containingProcessor;
 		this.IF_OF_Latch = iF_OF_Latch;
 		this.OF_EX_Latch = oF_EX_Latch;
@@ -109,163 +110,161 @@ public class OperandFetch {
 	String bgt = "11100"; // Opcode
 	String end = "11101"; // Opcode
 
-
-
-
 	public boolean checkConflict(int a, int b) {
 		String A = binaryofint(a);
 		String B = binaryofint(b);
 		String Aopcode = A.substring(0, 5);
 		String Bopcode = B.substring(0, 5);
-	
+
 		// System.out.println("\n"+A +" " +a );
 		// System.out.println(B + " " + b + "\n");
 
-
-
-		if (a==0 || b==0){
+		if (a == 0 || b == 0) {
 			return false;
 		}
-		if (a==-402653184 || b==-402653184){
+		if (a == -402653184 || b == -402653184) {
 			// end ins
 			return false;
 		}
 
-		if (a== -134217728 || b == -134217728){
-			// default instruction 
+		if (a == -134217728 || b == -134217728) {
+			// default instruction
 			// 11111000000 which never comes
 			return false;
 		}
 
 		int Ars1 = (int) Long.parseLong(A.substring(5, 10), 2);
 		int AimmBit = 0;
-		int Ars2  = (int) Long.parseLong(A.substring(10, 15), 2);;
+		int Ars2 = (int) Long.parseLong(A.substring(10, 15), 2);
+		;
 		int Ard = 31;
-	
+
 		if (INSTRUCTION_TYPE.get(Aopcode) == 3) {
 			// R3 type instruction
 			Ars2 = (int) Long.parseLong(A.substring(10, 15), 2);
 			Ard = (int) Long.parseLong(A.substring(15, 20), 2);
 		}
-	
+
 		if (INSTRUCTION_TYPE.get(Aopcode) == 2) {
 			// R type instruction
 			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 			AimmBit = 1;
-			System.out.println( Ard + " ARD llllllllllllllllllll");
+			System.out.println(Ard + " ARD llllllllllllllllllll");
 		}
-	
 
 		if (INSTRUCTION_TYPE.get(Aopcode) == 6) {
 			// R type instruction
 			Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 			AimmBit = 1;
-			System.out.println( Ard + " ARD llllllllllllllllllll");
+			System.out.println(Ard + " ARD llllllllllllllllllll");
 		}
-	
-
-
 
 		int Brd = 31;
 		int BimmBit = 0;
-	
+
 		if (INSTRUCTION_TYPE.get(Bopcode) == 3) {
 			// R3 type instruction
 			Brd = (int) Long.parseLong(B.substring(15, 20), 2);
 		}
-	
+
 		if (INSTRUCTION_TYPE.get(Bopcode) == 2) {
 			// R type instruction
 			Brd = (int) Long.parseLong(B.substring(10, 15), 2);
 			BimmBit = 1;
 		}
-	
+
 		// Check if Aopcode is one of "beq", "bne", "blt", or "bgt"
 		if (Aopcode.equals("11001") || Aopcode.equals("11010") || Aopcode.equals("11011") || Aopcode.equals("11100")) {
 
-					System.out.println(Aopcode  + " " + Brd + " " + Ars1 + " " + Ard + " " + "Outside cond");
+			System.out.println(Aopcode + " " + Brd + " " + Ars1 + " " + Ard + " " + "Outside cond");
 
-				if (Brd == Ars1 || Brd == Ard){
+			if (Brd == Ars1 || Brd == Ard) {
 
-					System.out.println("Inside cond");
+				System.out.println("Inside cond");
 
-					return true;
+				return true;
 
-				}
+			}
 
 			// System.out.println("Branch but not checked for dependecy " + a);
 			return false;
 		}
-	
+
 		// Check if Bopcode is one of "store", "beq", "bne", "blt", or "bgt"
-		if (Bopcode.equals("10111") || Bopcode.equals("11001") || Bopcode.equals("11010") || Bopcode.equals("11011") || Bopcode.equals("11100")) {
+		if (Bopcode.equals("10111") || Bopcode.equals("11001") || Bopcode.equals("11010") || Bopcode.equals("11011")
+				|| Bopcode.equals("11100")) {
 			return false;
 		}
-	
+
 		int src1 = Ars1;
 		int src2 = Ars2;
-	
+
 		if (Aopcode.equals("10111")) {
 			src2 = Ard;
 		}
-	
+
 		int dest = Brd;
 		boolean hasSrc2 = true;
-	
+
 		if (!Aopcode.equals("10111")) {
 			if (AimmBit == 1) {
 				hasSrc2 = false;
 			}
 		}
-	
+
 		if (src1 == dest) {
 			return true;
 		} else if (hasSrc2 && src2 == dest) {
 			return true;
 		}
-	
+
 		return false;
 	}
-
 
 	public void performOF() {
 
 		// Ass4
 		// a : Instruction in OF
 		// b : Instruction in EX
-		// System.out.println("kkkkkkkkkkkkkkkkkkkkk " + binaryToInt("11111000000000000000000000000000"));
+		// System.out.println("kkkkkkkkkkkkkkkkkkkkk " +
+		// binaryToInt("11111000000000000000000000000000"));
 
-
-		// System.out.println("lallalalalaaaaa " + this.checkConflict(-754974720, -754974720));
+		// System.out.println("lallalalalaaaaa " + this.checkConflict(-754974720,
+		// -754974720));
 		// IF_OF_Latch.enable_IF_OF_Later();
 
 		if (Variables.branch_taken_global_variable) {
+			System.out.println("locan branch taken in Opereand fetch and returned");
+
 			return;
 		}
 
 		if (IF_OF_Latch.isOF_enable()) {
 
-
 			System.out.println("In OF");
-		if(OF_EX_Latch.isEX_busy()){
-			IF_OF_Latch.setOF_busy(true);
-			return;
-		}
-		else IF_OF_Latch.setOF_busy(false);
+			if (OF_EX_Latch.isEX_busy()) {
 
-			System.out.println("***** PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
+				System.out.println("setting of to busy");
 
-			
-			System.out.println("****** PRINTING CONFLICT OF - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer));
+				IF_OF_Latch.setOF_busy(true);
+				return;
+			} else
+				IF_OF_Latch.setOF_busy(false);
 
-			// System.out.println("****** PRINTING CONFLICT EX - MA: " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, EX_MA_Latch.EX_MA_instruction_in_integer));
-			System.out.println("\nIF OF "+IF_OF_Latch.IF_OF_instruction_in_integer);
-			
-			System.out.println("\nOF EX "+ OF_EX_Latch.OF_EX_instruction_in_integer);
+			System.out.println("***** PRINTING CONFLICT OF - EX  " + this
+					.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer));
 
-			System.out.println("\nEX MA "+EX_MA_Latch.EX_MA_instruction_in_integer);
+			System.out.println("****** PRINTING CONFLICT OF - MA: " + this
+					.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer));
 
+			// System.out.println("****** PRINTING CONFLICT EX - MA: " +
+			// this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer,
+			// EX_MA_Latch.EX_MA_instruction_in_integer));
+			System.out.println("\nIF OF " + IF_OF_Latch.IF_OF_instruction_in_integer);
 
+			System.out.println("\nOF EX " + OF_EX_Latch.OF_EX_instruction_in_integer);
+
+			System.out.println("\nEX MA " + EX_MA_Latch.EX_MA_instruction_in_integer);
 
 			// *******************
 
@@ -276,40 +275,31 @@ public class OperandFetch {
 			// Control unit
 			String OPCODE = INSTRUCTION.substring(0, 5);
 
-
-
 			System.out.println("PC in OF " + PC);
-		
 
+			if ((this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer))
+					||
+					this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer,
+							MA_RW_Latch.MA_RW_instruction_in_integer)
 
+			) {
 
-			if ( (this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) )
-			||
-			this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, MA_RW_Latch.MA_RW_instruction_in_integer)
-			
-			)
-			{
-
-				
-
-				Variables.DATA_CLASHES +=1;
+				Variables.DATA_CLASHES += 1;
 				System.out.println("Uuuuu Conflict ****");
-				System.out.println("Will store this for future use ****" +PC + " Ins : " +containingProcessor.getMainMemory().getWord(PC-1) + " and it has to be actually " + IF_OF_Latch.IF_OF_instruction_in_integer);
-				Variables.CONFLICT_PC_OF = PC-1;
+				System.out.println("Will store this for future use ****" + PC + " Ins : "
+						+ containingProcessor.getMainMemory().getWord(PC - 1) + " and it has to be actually "
+						+ IF_OF_Latch.IF_OF_instruction_in_integer);
+				Variables.CONFLICT_PC_OF = PC - 1;
 				Variables.set_next_time = true;
 				IF_OF_Latch.null_and_void_if_of();
 				OF_EX_Latch.null_and_void_ex_of();
-				
+
 				IF_OF_LatchType.check = true;
 
 				return;
 			}
 
-
-
-
 			OF_EX_Latch.setOpCode(OPCODE);
-
 
 			OF_EX_Latch.OF_EX_instruction_in_integer = IF_OF_Latch.getInstruction();
 			// Immediate
@@ -340,8 +330,7 @@ public class OperandFetch {
 			System.out.println("\nPC is  " + PC);
 			System.out.println("Offset is  " + OFFSET);
 
-
-			System.out.println("Branch target  " + branchTarget+"\n");
+			System.out.println("Branch target  " + branchTarget + "\n");
 			OF_EX_Latch.setBranchTarget(branchTarget);
 
 			// Set op1

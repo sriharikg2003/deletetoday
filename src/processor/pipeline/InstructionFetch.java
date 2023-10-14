@@ -30,6 +30,7 @@ public class InstructionFetch implements Element {
 	@Override
 	public void handleEvent(Event e) {
 
+		System.out.println("I CAME IN EVENT HANDLE OF IF  BRO");
 		if (IF_OF_Latch.isOF_busy()) {
 
 			System.out.println("YES IN EVENT HANDLE IF IS BUSY");
@@ -118,10 +119,13 @@ public class InstructionFetch implements Element {
 
 				System.out.println("Sending memory read request ");
 
-				Simulator.getEventQueue().addEvent(
-						new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
-								containingProcessor.getMainMemory(),
-								containingProcessor.getRegisterFile().getProgramCounter()));
+				MemoryReadEvent myevent  = new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
+				containingProcessor.getMainMemory(),
+				containingProcessor.getRegisterFile().getProgramCounter());
+				Simulator.getEventQueue().addEvent( myevent);
+
+
+				System.out.println("ADDDING EVENT " + myevent);
 
 				IF_EnableLatch.setIF_busy(true);
 			
