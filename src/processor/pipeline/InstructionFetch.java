@@ -1,9 +1,18 @@
 package processor.pipeline;
 
+import generic.Simulator;
+import generic.MemoryReadEvent;
 import processor.Processor;
 import processor.pipeline.Variables;
+import configuration.*;
+import processor.Clock;
+import configuration.Configuration;
+import generic.Element;
+import generic.Event;
+import generic.MemoryResponseEvent;
+import processor.memorysystem.MainMemory;
 
-public class InstructionFetch {
+public class InstructionFetch implements Element {
 
 	Processor containingProcessor;
 	IF_EnableLatchType IF_EnableLatch;///////////////////////////////////////////////////////
@@ -18,6 +27,20 @@ public class InstructionFetch {
 		this.EX_IF_Latch = eX_IF_Latch;
 	}
 
+	@Override
+	public void handleEvent(Event e) {
+		if (IF_OF_Latch.isOF_busy()) {
+			e.setEventTime(Clock.getCurrentTime() + 1);
+			Simulator.getEventQueue().addEvent(e);
+		} else {
+			MemoryResponseEvent event = (MemoryResponseEvent) e;
+			IF_OF_Latch.setInstruction(event.getValue());
+			IF_OF_Latch.setOF_enable(true);
+			IF_EnableLatch.setIF_busy(false);
+		}
+	}
+	
+
 	public void performIF() {
 
 		// System.out.println("BC TAKEN " + Variables.branch_taken_global_variable);
@@ -30,6 +53,17 @@ public class InstructionFetch {
 		}
 
 		if (IF_EnableLatch.isIF_enable()) {
+
+			if (IF_EnableLatch.isIF_busy()) {
+				return;
+			}
+
+			
+			Simulator.getEventQueue().addEvent(
+				new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency,this,containingProcessor.getMainMemory() , containingProcessor.getRegisterFile().getProgramCounter())
+			);
+
+			IF_EnableLatch.setIF_busy(true);
 
 			if (IF_OF_LatchType.check) {
 
@@ -48,9 +82,8 @@ public class InstructionFetch {
 				IF_OF_Latch.setInstruction(newInstruction);
 				IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
 
+				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 
-					containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
-				
 				IF_OF_LatchType.check = false;
 
 				return;
@@ -63,22 +96,16 @@ public class InstructionFetch {
 			if (newInstruction != 0) {
 				System.out.println(currentPC + " lll " + containingProcessor.getMainMemory().getWord(currentPC));
 
-
-				Variables.NO_OF_INSTRUCTIONS_FETCHED +=1;
+				Variables.NO_OF_INSTRUCTIONS_FETCHED += 1;
 				IF_OF_Latch.setInstruction(newInstruction);
 				IF_OF_Latch.set_IF_OF_instruction_in_integer(newInstruction);
 
 				// Variables.final_PC = currentPC;
-				if (newInstruction==  -402653184){
-					Variables.final_PC  = currentPC+1;
+				if (newInstruction == -402653184) {
+					Variables.final_PC = currentPC + 1;
 				}
 
-				
-
-					containingProcessor.getRegisterFile().setProgramCounter(currentPC +1 );
-
-
-				
+				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 
 				IF_OF_Latch.setOF_enable(true);
 			}
