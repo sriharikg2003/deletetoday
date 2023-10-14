@@ -3,7 +3,7 @@ package processor.pipeline;
 public class IF_EnableLatchType {
 	
 	public static boolean IF_enable;
-	public static boolean IF_busy;
+	public  boolean IF_busy;
 	int IF_Ena_instruction_in_integer = -134217728; 
 
 

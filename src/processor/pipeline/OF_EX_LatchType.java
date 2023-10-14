@@ -5,8 +5,10 @@ public class OF_EX_LatchType {
 	// Flag for control
 	public  boolean EX_enable;
 
+	public boolean EX_busy;
 	int OF_EX_instruction_in_integer = -134217728; 
 
+	int INSTRUCTION;
 
 	public void set_OF_EX_instruction_in_integer(int x){
 		OF_EX_instruction_in_integer = x;
@@ -124,4 +126,21 @@ public class OF_EX_LatchType {
 		 OF_EX_instruction_in_integer = 0;
 	}
 
+
+	public boolean isEX_busy() {
+		return EX_busy;
+	}
+
+	public void setEX_busy(boolean value) {
+		EX_busy = value;
+	}
+
+
+	public int getInstruction() {
+		return INSTRUCTION;
+	}
+
+	public void setInstruction(int INSTRUCTION) {
+		this.INSTRUCTION = INSTRUCTION;
+	}
 }

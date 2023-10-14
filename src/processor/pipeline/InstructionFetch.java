@@ -29,41 +29,26 @@ public class InstructionFetch implements Element {
 
 	@Override
 	public void handleEvent(Event e) {
+
 		if (IF_OF_Latch.isOF_busy()) {
+
+			System.out.println("YES IN EVENT HANDLE IF IS BUSY");
 			e.setEventTime(Clock.getCurrentTime() + 1);
 			Simulator.getEventQueue().addEvent(e);
+
 		} else {
 			MemoryResponseEvent event = (MemoryResponseEvent) e;
-			IF_OF_Latch.setInstruction(event.getValue());
-			IF_OF_Latch.setOF_enable(true);
-			IF_EnableLatch.setIF_busy(false);
-		}
-	}
-	
+			System.out.println("EVENT IS "+ event);
+			if (Variables.branch_taken_global_variable) {
 
-	public void performIF() {
-
-		// System.out.println("BC TAKEN " + Variables.branch_taken_global_variable);
-
-		if (Variables.branch_taken_global_variable) {
-
-			IF_OF_Latch.null_and_void_if_of();
-			Variables.branch_taken_global_variable = false;
-			return;
-		}
-
-		if (IF_EnableLatch.isIF_enable()) {
-
-			if (IF_EnableLatch.isIF_busy()) {
+				IF_OF_Latch.null_and_void_if_of();
+				Variables.branch_taken_global_variable = false;
 				return;
 			}
 
-			
-			Simulator.getEventQueue().addEvent(
-				new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency,this,containingProcessor.getMainMemory() , containingProcessor.getRegisterFile().getProgramCounter())
-			);
-
-			IF_EnableLatch.setIF_busy(true);
+			IF_OF_Latch.setInstruction(event.getValue());
+			IF_OF_Latch.setOF_enable(true);
+			IF_EnableLatch.setIF_busy(false);
 
 			if (IF_OF_LatchType.check) {
 
@@ -89,7 +74,6 @@ public class InstructionFetch implements Element {
 				return;
 			}
 
-			System.out.println("In IF");
 			int currentPC = containingProcessor.getRegisterFile().getProgramCounter();
 			int newInstruction = containingProcessor.getMainMemory().getWord(currentPC);
 
@@ -105,15 +89,45 @@ public class InstructionFetch implements Element {
 					Variables.final_PC = currentPC + 1;
 				}
 
-				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
+				// containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 
 				IF_OF_Latch.setOF_enable(true);
 			}
 
 			else {
-				System.out.println("0 ins in IF");
+				IF_EnableLatch.setIF_busy(true);
+
 				return;
 			}
+
+		}
+	}
+
+	public void performIF() {
+
+		System.out.println("HELL INSIDE IF STAGE " + IF_EnableLatch.isIF_enable()  + " HLL");
+
+		if (IF_EnableLatch.isIF_enable()) {
+
+			if (IF_EnableLatch.isIF_busy()) {
+				System.out.println("IF IS BUSY BRO");
+				return;
+			}
+
+			else {
+
+				System.out.println("Sending memory read request ");
+
+				Simulator.getEventQueue().addEvent(
+						new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
+								containingProcessor.getMainMemory(),
+								containingProcessor.getRegisterFile().getProgramCounter()));
+
+				IF_EnableLatch.setIF_busy(true);
+			
+
+			}
+
 		}
 	}
 

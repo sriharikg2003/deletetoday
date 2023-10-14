@@ -1,0 +1,1305 @@
+Buildfile: /home/srihari/Desktop/CA_Lab5_SRIHARI/build.xml
+
+build-subprojects:
+
+init:
+
+build-project:
+
+build:
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Buildfile: /home/srihari/Desktop/CA_Lab5_SRIHARI/build.xml
+CYCLE :1
+PROCESSING EVENTS ********************************
+PROCESSING EVENTS ENDED********************************
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :2
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@5fd0d5ae
+HANDELD EVENT generic.MemoryReadEvent@5fd0d5ae
+PROCESSING EVENT generic.MemoryResponseEvent@16b98e56
+EVENT IS generic.MemoryResponseEvent@16b98e56
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@16b98e56
+PROCESSING EVENTS ENDED********************************
+In OF
+***** PRINTING CONFLICT OF - EX  false
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -134217728
+
+EX MA -134217728
+PC in OF 1
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :3
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@27d6c5e0
+HANDELD EVENT generic.MemoryReadEvent@27d6c5e0
+PROCESSING EVENT generic.ExecutionCompleteEvent@4f3f5b24
+HANDELD EVENT generic.ExecutionCompleteEvent@4f3f5b24
+PROCESSING EVENT generic.MemoryResponseEvent@15aeb7ab
+EVENT IS generic.MemoryResponseEvent@15aeb7ab
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@15aeb7ab
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :4
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@7b23ec81
+HANDELD EVENT generic.MemoryReadEvent@7b23ec81
+PROCESSING EVENT generic.ExecutionCompleteEvent@6acbcfc0
+HANDELD EVENT generic.ExecutionCompleteEvent@6acbcfc0
+PROCESSING EVENT generic.MemoryResponseEvent@5f184fc6
+EVENT IS generic.MemoryResponseEvent@5f184fc6
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@5f184fc6
+PROCESSING EVENT generic.MemoryReadEvent@3feba861
+HANDELD EVENT generic.MemoryReadEvent@3feba861
+PROCESSING EVENT generic.MemoryResponseEvent@5b480cf9
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@5b480cf9
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :5
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@6f496d9f
+HANDELD EVENT generic.MemoryReadEvent@6f496d9f
+PROCESSING EVENT generic.ExecutionCompleteEvent@6acbcfc0
+HANDELD EVENT generic.ExecutionCompleteEvent@6acbcfc0
+PROCESSING EVENT generic.MemoryResponseEvent@723279cf
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@723279cf
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :6
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@723279cf
+EVENT IS generic.MemoryResponseEvent@723279cf
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@723279cf
+PROCESSING EVENT generic.ExecutionCompleteEvent@10f87f48
+HANDELD EVENT generic.ExecutionCompleteEvent@10f87f48
+PROCESSING EVENT generic.MemoryReadEvent@b4c966a
+HANDELD EVENT generic.MemoryReadEvent@b4c966a
+PROCESSING EVENT generic.MemoryResponseEvent@2f4d3709
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@2f4d3709
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :7
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@4e50df2e
+HANDELD EVENT generic.MemoryReadEvent@4e50df2e
+PROCESSING EVENT generic.ExecutionCompleteEvent@10f87f48
+HANDELD EVENT generic.ExecutionCompleteEvent@10f87f48
+PROCESSING EVENT generic.MemoryResponseEvent@1d81eb93
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@1d81eb93
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :8
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@1d81eb93
+EVENT IS generic.MemoryResponseEvent@1d81eb93
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@1d81eb93
+PROCESSING EVENT generic.ExecutionCompleteEvent@7291c18f
+HANDELD EVENT generic.ExecutionCompleteEvent@7291c18f
+PROCESSING EVENT generic.MemoryReadEvent@34a245ab
+HANDELD EVENT generic.MemoryReadEvent@34a245ab
+PROCESSING EVENT generic.MemoryResponseEvent@7cc355be
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@7cc355be
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :9
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@6e8cf4c6
+HANDELD EVENT generic.MemoryReadEvent@6e8cf4c6
+PROCESSING EVENT generic.ExecutionCompleteEvent@7291c18f
+HANDELD EVENT generic.ExecutionCompleteEvent@7291c18f
+PROCESSING EVENT generic.MemoryResponseEvent@12edcd21
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@12edcd21
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :10
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@12edcd21
+EVENT IS generic.MemoryResponseEvent@12edcd21
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@12edcd21
+PROCESSING EVENT generic.ExecutionCompleteEvent@34c45dca
+HANDELD EVENT generic.ExecutionCompleteEvent@34c45dca
+PROCESSING EVENT generic.MemoryReadEvent@52cc8049
+HANDELD EVENT generic.MemoryReadEvent@52cc8049
+PROCESSING EVENT generic.MemoryResponseEvent@5b6f7412
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@5b6f7412
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :11
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@27973e9b
+HANDELD EVENT generic.MemoryReadEvent@27973e9b
+PROCESSING EVENT generic.ExecutionCompleteEvent@34c45dca
+HANDELD EVENT generic.ExecutionCompleteEvent@34c45dca
+PROCESSING EVENT generic.MemoryResponseEvent@312b1dae
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@312b1dae
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :12
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@312b1dae
+EVENT IS generic.MemoryResponseEvent@312b1dae
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@312b1dae
+PROCESSING EVENT generic.ExecutionCompleteEvent@7530d0a
+HANDELD EVENT generic.ExecutionCompleteEvent@7530d0a
+PROCESSING EVENT generic.MemoryReadEvent@27bc2616
+HANDELD EVENT generic.MemoryReadEvent@27bc2616
+PROCESSING EVENT generic.MemoryResponseEvent@3941a79c
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@3941a79c
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :13
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@506e1b77
+HANDELD EVENT generic.MemoryReadEvent@506e1b77
+PROCESSING EVENT generic.ExecutionCompleteEvent@7530d0a
+HANDELD EVENT generic.ExecutionCompleteEvent@7530d0a
+PROCESSING EVENT generic.MemoryResponseEvent@4fca772d
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@4fca772d
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :14
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@4fca772d
+EVENT IS generic.MemoryResponseEvent@4fca772d
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@4fca772d
+PROCESSING EVENT generic.ExecutionCompleteEvent@9807454
+HANDELD EVENT generic.ExecutionCompleteEvent@9807454
+PROCESSING EVENT generic.MemoryReadEvent@3d494fbf
+HANDELD EVENT generic.MemoryReadEvent@3d494fbf
+PROCESSING EVENT generic.MemoryResponseEvent@1ddc4ec2
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@1ddc4ec2
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :15
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@133314b
+HANDELD EVENT generic.MemoryReadEvent@133314b
+PROCESSING EVENT generic.ExecutionCompleteEvent@9807454
+HANDELD EVENT generic.ExecutionCompleteEvent@9807454
+PROCESSING EVENT generic.MemoryResponseEvent@b1bc7ed
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@b1bc7ed
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :16
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@b1bc7ed
+EVENT IS generic.MemoryResponseEvent@b1bc7ed
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@b1bc7ed
+PROCESSING EVENT generic.ExecutionCompleteEvent@7cd84586
+HANDELD EVENT generic.ExecutionCompleteEvent@7cd84586
+PROCESSING EVENT generic.MemoryReadEvent@30dae81
+HANDELD EVENT generic.MemoryReadEvent@30dae81
+PROCESSING EVENT generic.MemoryResponseEvent@1b2c6ec2
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@1b2c6ec2
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :17
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@4edde6e5
+HANDELD EVENT generic.MemoryReadEvent@4edde6e5
+PROCESSING EVENT generic.ExecutionCompleteEvent@7cd84586
+HANDELD EVENT generic.ExecutionCompleteEvent@7cd84586
+PROCESSING EVENT generic.MemoryResponseEvent@70177ecd
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@70177ecd
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :18
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@70177ecd
+EVENT IS generic.MemoryResponseEvent@70177ecd
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@70177ecd
+PROCESSING EVENT generic.ExecutionCompleteEvent@1e80bfe8
+HANDELD EVENT generic.ExecutionCompleteEvent@1e80bfe8
+PROCESSING EVENT generic.MemoryReadEvent@66a29884
+HANDELD EVENT generic.MemoryReadEvent@66a29884
+PROCESSING EVENT generic.MemoryResponseEvent@4769b07b
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@4769b07b
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :19
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@cc34f4d
+HANDELD EVENT generic.MemoryReadEvent@cc34f4d
+PROCESSING EVENT generic.ExecutionCompleteEvent@1e80bfe8
+HANDELD EVENT generic.ExecutionCompleteEvent@1e80bfe8
+PROCESSING EVENT generic.MemoryResponseEvent@17a7cec2
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@17a7cec2
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :20
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@17a7cec2
+EVENT IS generic.MemoryResponseEvent@17a7cec2
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@17a7cec2
+PROCESSING EVENT generic.ExecutionCompleteEvent@65b3120a
+HANDELD EVENT generic.ExecutionCompleteEvent@65b3120a
+PROCESSING EVENT generic.MemoryReadEvent@6f539caf
+HANDELD EVENT generic.MemoryReadEvent@6f539caf
+PROCESSING EVENT generic.MemoryResponseEvent@79fc0f2f
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@79fc0f2f
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :21
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@50040f0c
+HANDELD EVENT generic.MemoryReadEvent@50040f0c
+PROCESSING EVENT generic.ExecutionCompleteEvent@65b3120a
+HANDELD EVENT generic.ExecutionCompleteEvent@65b3120a
+PROCESSING EVENT generic.MemoryResponseEvent@2dda6444
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@2dda6444
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :22
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@2dda6444
+EVENT IS generic.MemoryResponseEvent@2dda6444
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@2dda6444
+PROCESSING EVENT generic.ExecutionCompleteEvent@5e9f23b4
+HANDELD EVENT generic.ExecutionCompleteEvent@5e9f23b4
+PROCESSING EVENT generic.MemoryReadEvent@4783da3f
+HANDELD EVENT generic.MemoryReadEvent@4783da3f
+PROCESSING EVENT generic.MemoryResponseEvent@378fd1ac
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@378fd1ac
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :23
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@49097b5d
+HANDELD EVENT generic.MemoryReadEvent@49097b5d
+PROCESSING EVENT generic.ExecutionCompleteEvent@5e9f23b4
+HANDELD EVENT generic.ExecutionCompleteEvent@5e9f23b4
+PROCESSING EVENT generic.MemoryResponseEvent@6e2c634b
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@6e2c634b
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :24
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@6e2c634b
+EVENT IS generic.MemoryResponseEvent@6e2c634b
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@6e2c634b
+PROCESSING EVENT generic.ExecutionCompleteEvent@37a71e93
+HANDELD EVENT generic.ExecutionCompleteEvent@37a71e93
+PROCESSING EVENT generic.MemoryReadEvent@7e6cbb7a
+HANDELD EVENT generic.MemoryReadEvent@7e6cbb7a
+PROCESSING EVENT generic.MemoryResponseEvent@7c3df479
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@7c3df479
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :25
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@7106e68e
+HANDELD EVENT generic.MemoryReadEvent@7106e68e
+PROCESSING EVENT generic.ExecutionCompleteEvent@37a71e93
+HANDELD EVENT generic.ExecutionCompleteEvent@37a71e93
+PROCESSING EVENT generic.MemoryResponseEvent@7eda2dbb
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@7eda2dbb
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :26
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@7eda2dbb
+EVENT IS generic.MemoryResponseEvent@7eda2dbb
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@7eda2dbb
+PROCESSING EVENT generic.ExecutionCompleteEvent@6576fe71
+HANDELD EVENT generic.ExecutionCompleteEvent@6576fe71
+PROCESSING EVENT generic.MemoryReadEvent@76fb509a
+HANDELD EVENT generic.MemoryReadEvent@76fb509a
+PROCESSING EVENT generic.MemoryResponseEvent@300ffa5d
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@300ffa5d
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :27
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@1f17ae12
+HANDELD EVENT generic.MemoryReadEvent@1f17ae12
+PROCESSING EVENT generic.ExecutionCompleteEvent@6576fe71
+HANDELD EVENT generic.ExecutionCompleteEvent@6576fe71
+PROCESSING EVENT generic.MemoryResponseEvent@4d405ef7
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@4d405ef7
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :28
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@4d405ef7
+EVENT IS generic.MemoryResponseEvent@4d405ef7
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@4d405ef7
+PROCESSING EVENT generic.ExecutionCompleteEvent@6193b845
+HANDELD EVENT generic.ExecutionCompleteEvent@6193b845
+PROCESSING EVENT generic.MemoryReadEvent@2e817b38
+HANDELD EVENT generic.MemoryReadEvent@2e817b38
+PROCESSING EVENT generic.MemoryResponseEvent@c4437c4
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@c4437c4
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :29
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@433c675d
+HANDELD EVENT generic.MemoryReadEvent@433c675d
+PROCESSING EVENT generic.ExecutionCompleteEvent@6193b845
+HANDELD EVENT generic.ExecutionCompleteEvent@6193b845
+PROCESSING EVENT generic.MemoryResponseEvent@3f91beef
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@3f91beef
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :30
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@3f91beef
+EVENT IS generic.MemoryResponseEvent@3f91beef
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@3f91beef
+PROCESSING EVENT generic.ExecutionCompleteEvent@1a6c5a9e
+HANDELD EVENT generic.ExecutionCompleteEvent@1a6c5a9e
+PROCESSING EVENT generic.MemoryReadEvent@37bba400
+HANDELD EVENT generic.MemoryReadEvent@37bba400
+PROCESSING EVENT generic.MemoryResponseEvent@179d3b25
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@179d3b25
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :31
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@254989ff
+HANDELD EVENT generic.MemoryReadEvent@254989ff
+PROCESSING EVENT generic.ExecutionCompleteEvent@1a6c5a9e
+HANDELD EVENT generic.ExecutionCompleteEvent@1a6c5a9e
+PROCESSING EVENT generic.MemoryResponseEvent@5d099f62
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@5d099f62
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :32
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@5d099f62
+EVENT IS generic.MemoryResponseEvent@5d099f62
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@5d099f62
+PROCESSING EVENT generic.ExecutionCompleteEvent@37f8bb67
+HANDELD EVENT generic.ExecutionCompleteEvent@37f8bb67
+PROCESSING EVENT generic.MemoryReadEvent@49c2faae
+HANDELD EVENT generic.MemoryReadEvent@49c2faae
+PROCESSING EVENT generic.MemoryResponseEvent@20ad9418
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@20ad9418
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :33
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@31cefde0
+HANDELD EVENT generic.MemoryReadEvent@31cefde0
+PROCESSING EVENT generic.ExecutionCompleteEvent@37f8bb67
+HANDELD EVENT generic.ExecutionCompleteEvent@37f8bb67
+PROCESSING EVENT generic.MemoryResponseEvent@439f5b3d
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@439f5b3d
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :34
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@439f5b3d
+EVENT IS generic.MemoryResponseEvent@439f5b3d
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@439f5b3d
+PROCESSING EVENT generic.ExecutionCompleteEvent@1d56ce6a
+HANDELD EVENT generic.ExecutionCompleteEvent@1d56ce6a
+PROCESSING EVENT generic.MemoryReadEvent@5197848c
+HANDELD EVENT generic.MemoryReadEvent@5197848c
+PROCESSING EVENT generic.MemoryResponseEvent@17f052a3
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@17f052a3
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :35
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@2e0fa5d3
+HANDELD EVENT generic.MemoryReadEvent@2e0fa5d3
+PROCESSING EVENT generic.ExecutionCompleteEvent@1d56ce6a
+HANDELD EVENT generic.ExecutionCompleteEvent@1d56ce6a
+PROCESSING EVENT generic.MemoryResponseEvent@5010be6
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@5010be6
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :36
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@5010be6
+EVENT IS generic.MemoryResponseEvent@5010be6
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@5010be6
+PROCESSING EVENT generic.ExecutionCompleteEvent@685f4c2e
+HANDELD EVENT generic.ExecutionCompleteEvent@685f4c2e
+PROCESSING EVENT generic.MemoryReadEvent@7daf6ecc
+HANDELD EVENT generic.MemoryReadEvent@7daf6ecc
+PROCESSING EVENT generic.MemoryResponseEvent@2e5d6d97
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@2e5d6d97
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :37
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@238e0d81
+HANDELD EVENT generic.MemoryReadEvent@238e0d81
+PROCESSING EVENT generic.ExecutionCompleteEvent@685f4c2e
+HANDELD EVENT generic.ExecutionCompleteEvent@685f4c2e
+PROCESSING EVENT generic.MemoryResponseEvent@31221be2
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@31221be2
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :38
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@31221be2
+EVENT IS generic.MemoryResponseEvent@31221be2
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@31221be2
+PROCESSING EVENT generic.ExecutionCompleteEvent@377dca04
+HANDELD EVENT generic.ExecutionCompleteEvent@377dca04
+PROCESSING EVENT generic.MemoryReadEvent@728938a9
+HANDELD EVENT generic.MemoryReadEvent@728938a9
+PROCESSING EVENT generic.MemoryResponseEvent@21b8d17c
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@21b8d17c
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :39
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@6433a2
+HANDELD EVENT generic.MemoryReadEvent@6433a2
+PROCESSING EVENT generic.ExecutionCompleteEvent@377dca04
+HANDELD EVENT generic.ExecutionCompleteEvent@377dca04
+PROCESSING EVENT generic.MemoryResponseEvent@5910e440
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@5910e440
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :40
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@5910e440
+EVENT IS generic.MemoryResponseEvent@5910e440
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@5910e440
+PROCESSING EVENT generic.ExecutionCompleteEvent@6267c3bb
+HANDELD EVENT generic.ExecutionCompleteEvent@6267c3bb
+PROCESSING EVENT generic.MemoryReadEvent@533ddba
+HANDELD EVENT generic.MemoryReadEvent@533ddba
+PROCESSING EVENT generic.MemoryResponseEvent@246b179d
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@246b179d
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :41
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@7a07c5b4
+HANDELD EVENT generic.MemoryReadEvent@7a07c5b4
+PROCESSING EVENT generic.ExecutionCompleteEvent@6267c3bb
+HANDELD EVENT generic.ExecutionCompleteEvent@6267c3bb
+PROCESSING EVENT generic.MemoryResponseEvent@26a1ab54
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@26a1ab54
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false
+
+IF OF -1341784064
+
+OF EX -1341784064
+
+EX MA -1341784064
+PC in OF 1
+3 ARD llllllllllllllllllll
+3 ARD llllllllllllllllllll
+
+PC is  1
+Offset is  0
+Branch target  0
+
+HELL INSIDE IF STAGE true HLL
+IF IS BUSY BRO
+
+ 
+CYCLE :42
+In RW
+writing 11
+In MA SS
+MA has ALU RESULT 0
+Loaded 11
+In EX
+In EX 10110
+1 BC 0
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryResponseEvent@26a1ab54
+EVENT IS generic.MemoryResponseEvent@26a1ab54
+1 lll -1341784064
+HANDELD EVENT generic.MemoryResponseEvent@26a1ab54
+PROCESSING EVENT generic.ExecutionCompleteEvent@3d646c37
+HANDELD EVENT generic.ExecutionCompleteEvent@3d646c37
+PROCESSING EVENT generic.MemoryReadEvent@41cf53f9
+HANDELD EVENT generic.MemoryReadEvent@41cf53f9
+PROCESSING EVENT generic.MemoryResponseEvent@5a10411
+MemoryResponse
+HANDELD EVENT generic.MemoryResponseEvent@5a10411
+PROCESSING EVENTS ENDED********************************
+In OF
+HELL INSIDE IF STAGE true HLL
+Sending memory read request 
+
+ 
+CYCLE :43
+In RW
+writing 11
+PROCESSING EVENTS ********************************
+PROCESSING EVENT generic.MemoryReadEvent@2ef1e4fa
+HANDELD EVENT generic.MemoryReadEvent@2ef1e4fa
+PROCESSING EVENT generic.ExecutionCompleteEvent@3d646c37
+HANDELD EVENT generic.ExecutionCompleteEvent@3d646c37
+PROCESSING EVENT generic.MemoryResponseEvent@306a30c7
+YES IN EVENT HANDLE IF IS BUSY
+HANDELD EVENT generic.MemoryResponseEvent@306a30c7
+PROCESSING EVENTS ENDED********************************
+In OF
+3 ARD llllllllllllllllllll
+***** PRINTING CONFLICT OF - EX  false
+3 ARD llllllllllllllllllll
+****** PRINTING CONFLICT OF - MA: false

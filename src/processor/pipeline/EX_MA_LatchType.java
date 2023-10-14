@@ -5,7 +5,7 @@ public class EX_MA_LatchType {
 	// Flags for control
 	boolean MA_enable;
 	boolean ISWRITEBACK;
-
+	public boolean ma_busy;
 	// ALU result and destination register
 	int ALU_RESULT;
 	int DESTINATION;
@@ -19,7 +19,12 @@ public class EX_MA_LatchType {
 		EX_MA_instruction_in_integer = x;
 	}
 
-
+	public boolean IsMA_busy(){
+		return ma_busy;
+	}
+	public void  set_MA_busy(boolean value){
+		 ma_busy = value;
+	}
 	public int get_EX_MA_instruction_in_integer(){
 		return EX_MA_instruction_in_integer;
 	}

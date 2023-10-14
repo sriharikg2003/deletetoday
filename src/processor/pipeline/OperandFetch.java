@@ -244,8 +244,14 @@ public class OperandFetch {
 		}
 
 		if (IF_OF_Latch.isOF_enable()) {
-			System.out.println("In OF");
 
+
+			System.out.println("In OF");
+		if(OF_EX_Latch.isEX_busy()){
+			IF_OF_Latch.setOF_busy(true);
+			return;
+		}
+		else IF_OF_Latch.setOF_busy(false);
 
 			System.out.println("***** PRINTING CONFLICT OF - EX  " + this.checkConflict(IF_OF_Latch.IF_OF_instruction_in_integer, OF_EX_Latch.OF_EX_instruction_in_integer) );
 

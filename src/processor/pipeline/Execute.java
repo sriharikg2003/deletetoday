@@ -3,10 +3,20 @@ package processor.pipeline;
 import processor.Processor;
 import java.util.HashMap;
 import java.util.Map;
+import generic.Simulator;
+import processor.Clock;
+import configuration.Configuration;
+import generic.Element;
+import generic.Event;
+import generic.MemoryReadEvent;
+import generic.MemoryResponseEvent;
+import generic.Event.EventType;
+import generic.ExecutionCompleteEvent;
+
 
 import javax.sound.midi.SysexMessage;
 
-public class Execute {
+public class Execute implements Element {
 	Processor containingProcessor;
 	OF_EX_LatchType OF_EX_Latch;
 	EX_MA_LatchType EX_MA_Latch;
@@ -47,6 +57,8 @@ public class Execute {
 		}
 	};
 
+
+	
 	public Execute(Processor containingProcessor, OF_EX_LatchType oF_EX_Latch, EX_MA_LatchType eX_MA_Latch,
 			EX_IF_LatchType eX_IF_Latch) {
 		this.containingProcessor = containingProcessor;
@@ -55,8 +67,33 @@ public class Execute {
 		this.EX_IF_Latch = eX_IF_Latch;
 	}
 
+	// @Override
+	// public void handleEvent(Event e) {
+	// 	if (OF_EX_Latch.isEX_busy()) {
+	// 		e.setEventTime(Clock.getCurrentTime() + 1);
+	// 		Simulator.getEventQueue().addEvent(e);
+	// 	} else {
+	// 		MemoryResponseEvent event = (MemoryResponseEvent) e;
+	// 		OF_EX_Latch.setInstruction(event.getValue());
+	// 		OF_EX_Latch.setEX_enable(true);
+	// 		IF_EnableLatch.setIF_busy(false);
+	// 	}
+	// }
+	
+
 	public void performEX() {
 		if (OF_EX_Latch.isEX_enable()) {
+
+
+			if (OF_EX_Latch.isEX_busy()) {
+				return;
+			}
+
+
+			// Simulator.getEventQueue().addEvent(
+			// 	new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency,this,containingProcessor.getMainMemory() , containingProcessor.getRegisterFile().getProgramCounter())
+			// );
+
 
 			System.out.println("In EX");
 
@@ -71,6 +108,8 @@ public class Execute {
 			int DESTINATION = OF_EX_Latch.getDestination();
 			int ALU_RESULT = 0;
 			int IMMEDIATE = OF_EX_Latch.getImmediate();
+
+			int latency = Configuration.ALU_latency;
 
 
 			EX_MA_Latch.EX_MA_instruction_in_integer = OF_EX_Latch.OF_EX_instruction_in_integer;
@@ -132,8 +171,12 @@ public class Execute {
 					ALU_RESULT = rs1 - IMMEDIATE;
 				} else if (OPCODE.equals("00101")) { // muli
 					ALU_RESULT = rs1 * IMMEDIATE;
+					latency = Configuration.multiplier_latency;
+
 				} else if (OPCODE.equals("00111")) { // divi
 					ALU_RESULT = rs1 / IMMEDIATE;
+					latency = Configuration.divider_latency;
+
 					containingProcessor.getRegisterFile().setValue(31, rs1 % IMMEDIATE);
 				} else if (OPCODE.equals("01001")) { // andi
 					ALU_RESULT = rs1 & IMMEDIATE;
@@ -166,8 +209,12 @@ public class Execute {
 				} else if (OPCODE.equals("00010")) { // sub
 					ALU_RESULT = rs1 - rs2;
 				} else if (OPCODE.equals("00100")) { // mul
+					latency = Configuration.multiplier_latency;
+
 					ALU_RESULT = rs1 * rs2;
 				} else if (OPCODE.equals("00110")) { // div
+					latency = Configuration.divider_latency;
+
 					ALU_RESULT = (int) (rs1 / rs2);
 					containingProcessor.getRegisterFile().setValue(31, rs1 % rs2);
 				} else if (OPCODE.equals("01000")) { // and
@@ -200,10 +247,39 @@ public class Execute {
 			}
 
 			
+			Simulator.getEventQueue().addEvent(
+				new ExecutionCompleteEvent(Clock.getCurrentTime() + latency, this, this, ALU_RESULT, DESTINATION, rs1, BRANCH_TARGET, OPCODE, IS_WRITE_BACK, local_branch_taken)
+			);
+
+			OF_EX_Latch.setEX_busy(true);
 
 			
 
 			// set all the things in the next latch.
+			
+			// OF_EX_Latch.setEX_enable(false);
+		}
+
+	}
+
+	@Override
+	public void handleEvent(Event e) {
+		if(EX_MA_Latch.IsMA_busy()){
+			e.setEventTime(Clock.getCurrentTime() + 1);
+			Simulator.getEventQueue().addEvent(e);
+		}
+		else if(e.getEventType() == EventType.ExecutionComplete){
+
+			ExecutionCompleteEvent event = (ExecutionCompleteEvent) e;
+			String OPCODE = event.getOpCode();
+			int ALU_RESULT = event.getAluresult();
+			int DESTINATION = event.getDestination();
+			boolean IS_WRITE_BACK = event.getIsWriteBack();
+			int rs1 = event.getrs1();
+			int branchTarget = event.getBranchTarget();
+			Boolean local_branch_taken = event.getIsBranchTaken();
+
+
 			EX_MA_Latch.setOpCode(OPCODE);
 			EX_MA_Latch.setAluResult(ALU_RESULT);
 			EX_MA_Latch.setDestination(DESTINATION);
@@ -220,9 +296,23 @@ public class Execute {
 				Variables.BRANCH_LOCKED += 1;
 				OF_EX_Latch.null_and_void_ex_of();
 			  }
-			// OF_EX_Latch.setEX_enable(false);
+
+
+
+
+
+			OF_EX_Latch.setEX_enable(false);
+
+			OF_EX_Latch.setDestination(32);
+
+			//setiing pc if branch taken
+			// if(isBranchTaken){
+			// 	containingProcessor.getRegisterFile().setProgramCounter(branchTarget);
+			// 	OF_EX_Latch.set_BranchTaken(true);
+			// }
+
+			OF_EX_Latch.setEX_busy(false);
+			
 		}
-
 	}
-
 }

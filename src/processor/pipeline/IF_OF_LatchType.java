@@ -6,7 +6,7 @@ public class IF_OF_LatchType {
 	int INSTRUCTION;
 
 	int IF_OF_instruction_in_integer = -134217728 ;
-	public static boolean OF_busy;
+	public  boolean OF_busy;
 	public static boolean check ;
 
 

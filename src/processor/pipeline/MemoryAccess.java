@@ -1,8 +1,17 @@
 package processor.pipeline;
 
+import configuration.Configuration;
+import generic.Element;
+import generic.Event;
+import generic.MemoryReadEvent;
+import generic.MemoryResponseEvent;
+import generic.MemoryWriteEvent;
+import generic.Simulator;
+import generic.Event.EventType;
+import processor.Clock;
 import processor.Processor;
 
-public class MemoryAccess {
+public class MemoryAccess implements Element{
 	Processor containingProcessor;
 	EX_MA_LatchType EX_MA_Latch;
 	MA_RW_LatchType MA_RW_Latch;
@@ -14,9 +23,44 @@ public class MemoryAccess {
 		this.MA_RW_Latch = mA_RW_Latch;
 	}
 	
+
+
+	@Override
+	public void handleEvent(Event e) {
+	
+		System.out.println(e.getEventType());
+		if(e.getEventType() == EventType.MemoryResponse){
+
+
+			MemoryResponseEvent event = (MemoryResponseEvent)e;
+
+			int aluResult = EX_MA_Latch.getAluresult();
+			boolean isWriteback = EX_MA_Latch.getWriteBack();
+			int destination = EX_MA_Latch.getDestination();
+			String optCode = EX_MA_Latch.getOpCode();
+			int loadResult = event.getValue();
+			
+			MA_RW_Latch.setAluResult(aluResult);
+			MA_RW_Latch.setLoadResult(loadResult);
+			MA_RW_Latch.setWriteBack(isWriteback);
+			MA_RW_Latch.setDestination(destination);
+			MA_RW_Latch.setOpCode(optCode);
+
+			MA_RW_Latch.setRW_enable(true);
+			EX_MA_Latch.setMA_enable(false);
+			EX_MA_Latch.set_MA_busy(false);
+			EX_MA_Latch.setDestination(32);
+		}
+
+	}
+
 	public void performMA()
 	{
 		if(EX_MA_Latch.isMA_enable()){
+
+			if(EX_MA_Latch.IsMA_busy()){
+				return;
+			}
 
 			System.out.println("In MA SS");
 
@@ -39,26 +83,54 @@ public class MemoryAccess {
 				LOAD_RESULT= containingProcessor.getMainMemory().getWord(ALU_RESULT);
 				System.out.println("Loaded " + LOAD_RESULT);
 
+
+				Simulator.getEventQueue().addEvent(
+						new MemoryReadEvent(
+							Clock.getCurrentTime() + Configuration.mainMemoryLatency,
+						 	this,
+							containingProcessor.getMainMemory(), 
+							EX_MA_Latch.getAluresult()
+							)
+					);
+
+					EX_MA_Latch.set_MA_busy(true);
+
 			}
 
 
 // STORE 
 			else if(OPCODE.equals("10111")){
-				System.out.println("storing in mem "+ALU_RESULT+" rs1 "+rs1);
-				containingProcessor.getMainMemory().setWord(ALU_RESULT, rs1);
-				System.out.println("Stored " + ALU_RESULT);
+
+				// System.out.println("storing in mem "+ALU_RESULT+" rs1 "+rs1);
+				// containingProcessor.getMainMemory().setWord(ALU_RESULT, rs1);
+				// System.out.println("Stored " + ALU_RESULT);
+				Simulator.getEventQueue().addEvent(
+						new MemoryWriteEvent(
+							Clock.getCurrentTime() + Configuration.mainMemoryLatency,
+							this, 
+							containingProcessor.getMainMemory(), 
+							EX_MA_Latch.getAluresult(), 
+							rs1)						
+					);
+					EX_MA_Latch.set_MA_busy(true);
 
 			}
 
-			MA_RW_Latch.setAluResult(ALU_RESULT);
+			else
+			{
+				MA_RW_Latch.setAluResult(ALU_RESULT);
 			MA_RW_Latch.setLoadResult(LOAD_RESULT);
 			MA_RW_Latch.setWriteBack(IS_WRITE_BACK);
 			MA_RW_Latch.setDestination(DESTINATION);
 			MA_RW_Latch.setOpCode(OPCODE);
 
 			MA_RW_Latch.setRW_enable(true);
+		}
 			// EX_MA_Latch.setMA_enable(false);
 		}
 	}
 
 }
+
+
+

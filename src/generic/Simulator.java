@@ -64,20 +64,20 @@ public class Simulator {
 		while (simulationComplete == false) {
 						System.out.println("CYCLE :"+(DYNAMIC_INSTRUCTIONS+1) );
 
-			// System.out.println("....... getRWUnit");
 			processor.getRWUnit().performRW();
-			// System.out.println("....... getMAUnit");
 			processor.getMAUnit().performMA();
-			// System.out.println("....... getEXUnit");
 			processor.getEXUnit().performEX();
-			// System.out.println("....... getOFUnit");
+
+			System.out.println("PROCESSING EVENTS ********************************");
+
 			eventQueue.processEvents();
-			// Queue procecss
+			System.out.println("PROCESSING EVENTS ENDED********************************");
 
 			processor.getOFUnit().performOF();
-			// System.out.println("....... performIF ");
 			processor.getIFUnit().performIF();
-			// Incrementing for checking the number of dynamic Instructions
+
+
+
 			DYNAMIC_INSTRUCTIONS++;
 			System.out.println("\n ");
 
