@@ -12,7 +12,7 @@ public class Simulator {
 	static Processor processor;
 	static boolean simulationComplete;
 	public static int LINE_NUMBER;
-
+	static EventQueue eventQueue;
 
 	public static int Branch_counter = 0 ;
 
@@ -20,6 +20,7 @@ public class Simulator {
 		Simulator.processor = p;
 		loadProgram(assemblyProgramFile);
 		simulationComplete = false;
+		eventQueue = new EventQueue();
 	}
 
 	static void loadProgram(String assemblyProgramFile) {
@@ -54,6 +55,10 @@ public class Simulator {
 
 	}
 
+	public static EventQueue getEventQueue(){
+		return eventQueue;
+	}
+	
 	public static void simulate() {
 		int DYNAMIC_INSTRUCTIONS = 0;
 		while (simulationComplete == false) {
@@ -66,6 +71,9 @@ public class Simulator {
 			// System.out.println("....... getEXUnit");
 			processor.getEXUnit().performEX();
 			// System.out.println("....... getOFUnit");
+			eventQueue.processEvents();
+			// Queue procecss
+
 			processor.getOFUnit().performOF();
 			// System.out.println("....... performIF ");
 			processor.getIFUnit().performIF();
