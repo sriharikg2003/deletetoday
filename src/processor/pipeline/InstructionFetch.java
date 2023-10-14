@@ -6,7 +6,7 @@ import processor.pipeline.Variables;
 public class InstructionFetch {
 
 	Processor containingProcessor;
-	IF_EnableLatchType IF_EnableLatch;
+	IF_EnableLatchType IF_EnableLatch;///////////////////////////////////////////////////////
 	IF_OF_LatchType IF_OF_Latch;
 	EX_IF_LatchType EX_IF_Latch;
 
@@ -72,7 +72,6 @@ public class InstructionFetch {
 				if (newInstruction==  -402653184){
 					Variables.final_PC  = currentPC+1;
 				}
-
 
 				
 
