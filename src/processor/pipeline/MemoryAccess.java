@@ -62,15 +62,7 @@ public class MemoryAccess implements Element{
 	{
 		System.out.println("In MEM");
 
-// REMOVE THIS FUNCTIOn
-		if (EX_MA_Latch.get_EX_MA_instruction_in_integer() == 135528453){
 
-			System.out.println("TEMP END \n\n****\n\n***\n\n********************************");
-			Simulator.simulationComplete = true;
-			System.out.println("TEMP SIMULATION STOPPED");
-
-			return ;
-		}
 
 
 		if(EX_MA_Latch.isMA_enable()){

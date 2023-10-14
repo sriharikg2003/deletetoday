@@ -31,6 +31,7 @@ public class InstructionFetch implements Element {
 	public void handleEvent(Event e) {
 
 		System.out.println("I CAME IN EVENT HANDLE OF IF  BRO");
+
 		if (IF_OF_Latch.isOF_busy()) {
 
 			System.out.println("YES IN EVENT HANDLE IF IS BUSY");
@@ -106,12 +107,13 @@ public class InstructionFetch implements Element {
 
 	public void performIF() {
 
-		System.out.println("HELL INSIDE IF STAGE " + IF_EnableLatch.isIF_enable()  + " HLL");
+		System.out.println("HELL INSIDE IF STAGE " + IF_EnableLatch.isIF_enable()  + " HLL" + Clock.getCurrentTime() + " main mem latency" + Configuration.mainMemoryLatency);
 
 		if (IF_EnableLatch.isIF_enable()) {
 
 			if (IF_EnableLatch.isIF_busy()) {
-				System.out.println("IF IS BUSY BRO");
+
+				System.out.println("IF enable IS BUSY BRO -------------");
 				return;
 			}
 

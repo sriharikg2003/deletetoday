@@ -17,6 +17,9 @@ public class Main {
 			Misc.printErrorAndExit("usage: java -jar <path-to-jar-file> <path-to-config-file> <path-to-stat-file> <path-to-object-file>\n");
 		}
 				
+		Configuration.parseConfiguratioFile(args[0]);
+
+		
 		Processor processor = new Processor();
 		
 		Simulator.setupSimulation(args[2], processor);
