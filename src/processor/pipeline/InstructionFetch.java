@@ -91,7 +91,7 @@ public class InstructionFetch implements Element {
 					Variables.final_PC = currentPC + 1;
 				}
 
-				// containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
+				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
 
 				IF_OF_Latch.setOF_enable(true);
 			}
@@ -107,7 +107,7 @@ public class InstructionFetch implements Element {
 
 	public void performIF() {
 
-		System.out.println("HELL INSIDE IF STAGE " + IF_EnableLatch.isIF_enable()  + " HLL" + Clock.getCurrentTime() + " main mem latency" + Configuration.mainMemoryLatency);
+		// System.out.println("HELL INSIDE IF STAGE " + IF_EnableLatch.isIF_enable()  + " HLL" + Clock.getCurrentTime() + " main mem latency" + Configuration.mainMemoryLatency);
 
 		if (IF_EnableLatch.isIF_enable()) {
 
@@ -119,7 +119,7 @@ public class InstructionFetch implements Element {
 
 			else {
 
-				System.out.println("Sending memory read request ");
+				
 
 				MemoryReadEvent myevent  = new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
 				containingProcessor.getMainMemory(),
@@ -127,8 +127,7 @@ public class InstructionFetch implements Element {
 				Simulator.getEventQueue().addEvent( myevent);
 
 
-				System.out.println("ADDDING EVENT " + myevent);
-
+				System.out.println("Sending memory read event "+myevent+ "request with time " +(Clock.getCurrentTime() + Configuration.mainMemoryLatency));
 				IF_EnableLatch.setIF_busy(true);
 			
 

@@ -238,19 +238,22 @@ public class Execute implements Element {
 			// jmp / jump
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 1) {
 				int PC = BRANCH_TARGET;
-
+				System.out.println("COMPULSORY BRANCH TAKE");
+				int oldPC = containingProcessor.getRegisterFile().getProgramCounter();
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
-				System.out.println("PC IS SET TO IN EX"  + containingProcessor.getRegisterFile().getProgramCounter());
+				System.out.println("PC IS SET FROM " + oldPC + " TO IN EX "  + containingProcessor.getRegisterFile().getProgramCounter());
 				local_branch_taken = true;
 
 
 			}
 
-			
+			ExecutionCompleteEvent exevent  = new ExecutionCompleteEvent(Clock.getCurrentTime() + latency, this, this, ALU_RESULT, DESTINATION, rs1, BRANCH_TARGET, OPCODE, IS_WRITE_BACK, local_branch_taken);
 			Simulator.getEventQueue().addEvent(
-				new ExecutionCompleteEvent(Clock.getCurrentTime() + latency, this, this, ALU_RESULT, DESTINATION, rs1, BRANCH_TARGET, OPCODE, IS_WRITE_BACK, local_branch_taken)
+				exevent
 			);
 
+
+			System.out.println( " ADDING EX EVENT " + exevent );
 			OF_EX_Latch.setEX_busy(true);
 
 			

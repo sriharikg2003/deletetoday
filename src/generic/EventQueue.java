@@ -23,12 +23,13 @@ public class EventQueue {
 	{
 
 
-		System.out.println("Process events");
-		System.out.println(queue.size());
-		System.out.println(Clock.getCurrentTime());
+		System.out.println("in fucntion Process events");
+		System.out.println("SIze of quueue "+ queue.size());
+		System.out.println("current time " + Clock.getCurrentTime());
+
+
 		if(queue.isEmpty() == false ){
-			System.out.println("top element's time");
-			System.out.println(queue.peek().getEventTime());
+			System.out.println("top element's time " + queue.peek().getEventTime());
 			
 		}
 
@@ -38,11 +39,14 @@ public class EventQueue {
 			// System.out.println("SIZE OF QUEUE IS  "+ queue.size());
 
 			Event event = queue.poll();
-			System.out.println("PROCESSING EVENT "+ event);
+			System.out.println("PROCESSING EVENT "+ event + " with time " + event.getEventTime());
 			event.getProcessingElement().handleEvent(event);
-			System.out.println("Prcoessed EVENT "+ event + " *ignore");
+			System.out.println("Prcoessed EVENT "+ event + " done");
 
 		}
+
+		System.out.println(" NOW IS QUE EMPTY ? " + queue.size());
+
 	}
 }
 
