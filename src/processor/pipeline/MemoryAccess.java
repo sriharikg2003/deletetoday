@@ -113,6 +113,8 @@ public class MemoryAccess implements Element{
 // STORE 
 			else if(OPCODE.equals("10111")){
 
+				System.out.println("sendig memory store request for time  " + (		Clock.getCurrentTime() + Configuration.mainMemoryLatency));
+
 				// System.out.println("storing in mem "+ALU_RESULT+" rs1 "+rs1);
 				// containingProcessor.getMainMemory().setWord(ALU_RESULT, rs1);
 				// System.out.println("Stored " + ALU_RESULT);

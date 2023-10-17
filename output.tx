@@ -1,5 +1,5 @@
-Number of static instructions = 3
-Number of cycles = 122
-Number of branches locked = 0
+Number of static instructions = 29
+Number of cycles = 16085
+Number of branches locked = 88
 Number of data clashes = 0
-Number of instructions fetched = 2
+Number of instructions fetched = 276

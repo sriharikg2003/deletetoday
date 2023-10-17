@@ -43,8 +43,7 @@ public class Processor {
 		EX_MA_Latch = new EX_MA_LatchType();
 		EX_IF_Latch = new EX_IF_LatchType();
 		MA_RW_Latch = new MA_RW_LatchType();
-		
-		IFUnit = new InstructionFetch(this, IF_EnableLatch, IF_OF_Latch, EX_IF_Latch);
+		IFUnit = new InstructionFetch(this, IF_EnableLatch, IF_OF_Latch, EX_IF_Latch , EX_MA_Latch, MA_RW_Latch, OF_EX_Latch);
 		// Modified OFUnit
 		OFUnit = new OperandFetch(this, IF_OF_Latch, OF_EX_Latch,EX_MA_Latch , MA_RW_Latch);
 		EXUnit = new Execute(this, OF_EX_Latch, EX_MA_Latch, EX_IF_Latch);

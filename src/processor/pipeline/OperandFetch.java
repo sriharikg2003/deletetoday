@@ -117,8 +117,8 @@ public class OperandFetch {
 		// String Aopcode = A.substring(0, 5);
 		// String Bopcode = B.substring(0, 5);
 
-		// // System.out.println("\n"+A +" " +a );
-		// // System.out.println(B + " " + b + "\n");
+		// // // System.out.println("\n"+A +" " +a );
+		// // // System.out.println(B + " " + b + "\n");
 
 		// if (a == 0 || b == 0) {
 		// 	return false;
@@ -150,14 +150,14 @@ public class OperandFetch {
 		// 	// R type instruction
 		// 	Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 		// 	AimmBit = 1;
-		// 	System.out.println(Ard + " ARD llllllllllllllllllll");
+		// 	// System.out.println(Ard + " ARD llllllllllllllllllll");
 		// }
 
 		// if (INSTRUCTION_TYPE.get(Aopcode) == 6) {
 		// 	// R type instruction
 		// 	Ard = (int) Long.parseLong(A.substring(10, 15), 2);
 		// 	AimmBit = 1;
-		// 	System.out.println(Ard + " ARD llllllllllllllllllll");
+		// 	// System.out.println(Ard + " ARD llllllllllllllllllll");
 		// }
 
 		// int Brd = 31;
@@ -177,7 +177,7 @@ public class OperandFetch {
 		// // Check if Aopcode is one of "beq", "bne", "blt", or "bgt"
 		// if (Aopcode.equals("11001") || Aopcode.equals("11010") || Aopcode.equals("11011") || Aopcode.equals("11100")) {
 
-		// 	System.out.println(Aopcode + " " + Brd + " " + Ars1 + " " + Ard + " " + "Outside cond");
+		// 	// System.out.println(Aopcode + " " + Brd + " " + Ars1 + " " + Ard + " " + "Outside cond");
 
 		// 	if (Brd == Ars1 || Brd == Ard) {
 
@@ -289,10 +289,14 @@ public class OperandFetch {
 
 				Variables.DATA_CLASHES += 1;
 				System.out.println("Uuuuu Conflict ****");
+				Variables.fetch_again = true;
+
 				System.out.println("Will store this for future use ****" + PC + " Ins : "
 						+ containingProcessor.getMainMemory().getWord(PC - 1) + " and it has to be actually "
 						+ IF_OF_Latch.IF_OF_instruction_in_integer);
 				Variables.CONFLICT_PC_OF = PC - 1;
+				Variables.fetch_again_pc = 	Variables.CONFLICT_PC_OF ;
+
 				Variables.set_next_time = true;
 				IF_OF_Latch.null_and_void_if_of();
 				OF_EX_Latch.null_and_void_ex_of();

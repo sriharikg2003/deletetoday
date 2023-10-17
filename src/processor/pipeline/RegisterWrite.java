@@ -41,10 +41,10 @@ public class RegisterWrite {
 				Simulator.setSimulationComplete(true);
 			}
 
-			if (Variables.end_instruction){
-				Simulator.setSimulationComplete(true);
+			// if (Variables.end_instruction){
+			// 	Simulator.setSimulationComplete(true);
 
-			}
+			// }
 	
 			int destination = MA_RW_Latch.getDestination();
 			int ALU_RESULT = MA_RW_Latch.getAluResult();
