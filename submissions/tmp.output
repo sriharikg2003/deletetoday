@@ -1,0 +1,18 @@
+Buildfile: /home/srihari/Desktop/CA_Lab5_SRIHARI/submissions/build.xml
+
+build-subprojects:
+
+init:
+    [mkdir] Created dir: /home/srihari/Desktop/CA_Lab5_SRIHARI/submissions/bin
+     [copy] Copying 2 files to /home/srihari/Desktop/CA_Lab5_SRIHARI/submissions/bin
+
+build-project:
+    [javac] Compiling 30 source files to /home/srihari/Desktop/CA_Lab5_SRIHARI/submissions/bin
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 8
+    [javac] 1 warning
+
+build:
+
+make-jar:
+    [mkdir] Created dir: /home/srihari/Desktop/CA_Lab5_SRIHARI/submissions/jars
+      [jar] Building jar: /home/srihari/Desktop/CA_Lab5_SRIHARI/submissions/jars/simulator.jar
