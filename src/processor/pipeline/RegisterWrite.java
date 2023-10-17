@@ -18,6 +18,8 @@ public class RegisterWrite {
 	public void performRW()
 	{
 		System.out.println("In RW");
+		System.out.println("Instruction in RW is " + MA_RW_Latch.MA_RW_instruction_in_integer);
+
 
 		if (MA_RW_Latch.isRW_enable())
 		{
@@ -46,18 +48,18 @@ public class RegisterWrite {
 				if (OPCODE.equals("10110"))
 				{
 					containingProcessor.getRegisterFile().setValue(destination, LOAD_RESULT);
-					System.out.println("writing "+LOAD_RESULT);
+					System.out.println("writing load result from reg "+ destination +" the value " + LOAD_RESULT);
 
 				}
 				else
 				{
 					containingProcessor.getRegisterFile().setValue(destination, ALU_RESULT);
-					System.out.println("writing "+ALU_RESULT);
+					System.out.println("writing alu result to reg "+ destination + " alu values = " +ALU_RESULT);
 
 				}
 			}
 	
-	
+			// MA_RW_Latch.setWriteBack(false);
 			// MA_RW_Latch.setRW_enable(false);
 			IF_EnableLatch.setIF_enable(true);
 		}

@@ -62,6 +62,7 @@ public class MemoryAccess implements Element{
 	{
 		System.out.println("In MEM");
 
+		System.out.println("Instruction in MA is " + EX_MA_Latch.EX_MA_instruction_in_integer);
 
 
 

@@ -16,11 +16,16 @@ public class Simulator {
 
 	public static int Branch_counter = 0 ;
 
+
+	public static void Simulator(){
+		System.out.println("srihari ki maa ki chut ");
+		eventQueue = new EventQueue();	
+	}
 	public static void setupSimulation(String assemblyProgramFile, Processor p) {
 		Simulator.processor = p;
 		loadProgram(assemblyProgramFile);
 		simulationComplete = false;
-		eventQueue = new EventQueue();
+		
 	}
 
 	static void loadProgram(String assemblyProgramFile) {

@@ -84,8 +84,11 @@ public class Execute implements Element {
 	public void performEX() {
 		if (OF_EX_Latch.isEX_enable()) {
 
+			System.out.println("Instruction in EX is " + OF_EX_Latch.OF_EX_instruction_in_integer);
 
 			if (OF_EX_Latch.isEX_busy()) {
+				System.out.println("EX IS BUSY BYE BYE " );
+
 				return;
 			}
 
@@ -140,6 +143,7 @@ public class Execute implements Element {
 
 						local_branch_taken = true;
 
+
 					}
 				} else if (OPCODE.equals("11011")) { // blt
 					if (rs1 < rdval) {
@@ -147,11 +151,13 @@ public class Execute implements Element {
 						local_branch_taken = true;
 
 
+
 					}
 				} else if (OPCODE.equals("11100")) { // bgt
 					if (rs1 > rdval) {
 						PC = BRANCH_TARGET;
 						local_branch_taken = true;
+
 
 
 					}
@@ -238,7 +244,7 @@ public class Execute implements Element {
 			// jmp / jump
 			else if (INSTRUCTION_TYPE.get(OPCODE) == 1) {
 				int PC = BRANCH_TARGET;
-				System.out.println("COMPULSORY BRANCH TAKE");
+				System.out.println("COMPULSORY BRANCH TAKE and branch target is " + BRANCH_TARGET);
 				int oldPC = containingProcessor.getRegisterFile().getProgramCounter();
 				containingProcessor.getRegisterFile().setProgramCounter(PC);
 				System.out.println("PC IS SET FROM " + oldPC + " TO IN EX "  + containingProcessor.getRegisterFile().getProgramCounter());
@@ -246,6 +252,18 @@ public class Execute implements Element {
 
 
 			}
+
+
+			if (local_branch_taken){
+
+				Variables.ignore_instruction = true;
+				Variables.bcos_ignore_new_pc = BRANCH_TARGET;
+System.out.println("PLEASE ignore_instruction and consider PC at " + BRANCH_TARGET);
+// Variables.BRANCH_LOCKED += 1;
+// Simulator.getEventQueue().addEvent();
+// OF_EX_Latch.null_and_void_ex_of();
+
+}
 
 			ExecutionCompleteEvent exevent  = new ExecutionCompleteEvent(Clock.getCurrentTime() + latency, this, this, ALU_RESULT, DESTINATION, rs1, BRANCH_TARGET, OPCODE, IS_WRITE_BACK, local_branch_taken);
 			Simulator.getEventQueue().addEvent(
@@ -258,9 +276,12 @@ public class Execute implements Element {
 
 			
 
+			
+
+
 			// set all the things in the next latch.
 			
-			// OF_EX_Latch.setEX_enable(false);
+			OF_EX_Latch.setEX_enable(false);
 		}
 
 	}

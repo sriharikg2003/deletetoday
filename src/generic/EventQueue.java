@@ -45,7 +45,7 @@ public class EventQueue {
 
 		}
 
-		System.out.println(" NOW IS QUE EMPTY ? " + queue.size());
+		// System.out.println(" NOW IS QUE EMPTY ? " + queue.size());
 
 	}
 }

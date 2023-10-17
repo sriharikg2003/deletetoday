@@ -53,6 +53,8 @@ public class MainMemory implements Element {
 				 this,
 				event.getRequestingElement(),
 				getWord(event.getAddressToReadFrom()));
+				System.out.println("LOADING FROM MEMORY " + getWord(event.getAddressToReadFrom()) );
+
 			Simulator.getEventQueue().addEvent(memRespEvent);
 
 			System.out.println("add memresp to memread " + memRespEvent);

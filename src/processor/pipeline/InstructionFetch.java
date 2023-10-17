@@ -41,11 +41,31 @@ public class InstructionFetch implements Element {
 		} else {
 			MemoryResponseEvent event = (MemoryResponseEvent) e;
 			System.out.println("EVENT IS "+ event);
-			if (Variables.branch_taken_global_variable) {
+			// if (Variables.branch_taken_global_variable) {
 
-				IF_OF_Latch.null_and_void_if_of();
-				Variables.branch_taken_global_variable = false;
+			// 	IF_OF_Latch.null_and_void_if_of();
+			// 	Variables.branch_taken_global_variable = false;
+			// 	return;
+			// }
+
+			if (Variables.ignore_instruction){
+				System.out.println("UFF ignore_instruction and newpc is " + Variables.bcos_ignore_new_pc);
+				// IF_OF_Latch.null_and_void_if_of();
+				// return;
+
+				MemoryReadEvent myevent  = new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
+				containingProcessor.getMainMemory(),
+				Variables.bcos_ignore_new_pc);
+				Simulator.getEventQueue().addEvent( myevent);
+
+
+				System.out.println("Sending memory special read event "+myevent+ "request with time " +(Clock.getCurrentTime() + Configuration.mainMemoryLatency));
+				IF_EnableLatch.setIF_busy(true);
+				
+				Variables.ignore_instruction = false;
+
 				return;
+
 			}
 
 			IF_OF_Latch.setInstruction(event.getValue());
@@ -98,7 +118,6 @@ public class InstructionFetch implements Element {
 
 			else {
 				IF_EnableLatch.setIF_busy(true);
-
 				return;
 			}
 
@@ -107,7 +126,7 @@ public class InstructionFetch implements Element {
 
 	public void performIF() {
 
-		// System.out.println("HELL INSIDE IF STAGE " + IF_EnableLatch.isIF_enable()  + " HLL" + Clock.getCurrentTime() + " main mem latency" + Configuration.mainMemoryLatency);
+		System.out.println("IN IF ");
 
 		if (IF_EnableLatch.isIF_enable()) {
 

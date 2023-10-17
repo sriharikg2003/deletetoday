@@ -8,6 +8,7 @@ public class Variables {
     public static boolean set_next_time = false;
     public static int CONFLICT_PC_OF ;
     
+    public static int bcos_ignore_new_pc;
 
     public static boolean sim_complete = false;
     public static int final_PC = 0;
@@ -26,6 +27,8 @@ public class Variables {
     public static int getBranch_counter(){
         return Branch_counter;
     }
+
+    public static boolean ignore_instruction = false;
 
 
     public static int NO_OF_CYCLES = 0;
