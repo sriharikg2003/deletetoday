@@ -1,5 +1,7 @@
 package processor.pipeline;
 
+import java.util.FormatterClosedException;
+
 import generic.Simulator;
 import processor.Processor;
 
@@ -37,6 +39,11 @@ public class RegisterWrite {
 				// containingProcessor.getRegisterFile().setProgramCounter(Variables.final_PC);
 				Simulator.setSimulationComplete(true);
 			}
+
+			if (Variables.end_instruction){
+				Simulator.setSimulationComplete(true);
+
+			}
 	
 			int destination = MA_RW_Latch.getDestination();
 			int ALU_RESULT = MA_RW_Latch.getAluResult();
@@ -61,7 +68,13 @@ public class RegisterWrite {
 	
 			// MA_RW_Latch.setWriteBack(false);
 			// MA_RW_Latch.setRW_enable(false);
+
 			IF_EnableLatch.setIF_enable(true);
+
+			if (Variables.end_instruction){
+				IF_EnableLatch.setIF_enable(false);
+
+			}
 		}
 	}
 }

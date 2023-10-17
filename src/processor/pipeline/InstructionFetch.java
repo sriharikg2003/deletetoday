@@ -50,7 +50,7 @@ public class InstructionFetch implements Element {
 
 			if (Variables.ignore_instruction){
 				System.out.println("UFF ignore_instruction and newpc is " + Variables.bcos_ignore_new_pc);
-				// IF_OF_Latch.null_and_void_if_of();
+				IF_OF_Latch.null_and_void_if_of();
 				// return;
 
 				MemoryReadEvent myevent  = new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
@@ -58,19 +58,35 @@ public class InstructionFetch implements Element {
 				Variables.bcos_ignore_new_pc);
 				Simulator.getEventQueue().addEvent( myevent);
 
+				// containingProcessor.getRegisterFile().setProgramCounter(Variables.bcos_ignore_new_pc);
+
 
 				System.out.println("Sending memory special read event "+myevent+ "request with time " +(Clock.getCurrentTime() + Configuration.mainMemoryLatency));
 				IF_EnableLatch.setIF_busy(true);
 				
 				Variables.ignore_instruction = false;
+				IF_OF_Latch.setOF_enable(true);
 
 				return;
 
 			}
 
+			System.out.println("SET INSTRUCTION IN IF OF AS  " + event.getValue());
+
 			IF_OF_Latch.setInstruction(event.getValue());
 			IF_OF_Latch.setOF_enable(true);
 			IF_EnableLatch.setIF_busy(false);
+			IF_OF_Latch.set_IF_OF_instruction_in_integer(event.getValue());
+			IF_OF_Latch.setOF_enable(true);
+
+
+			if (event.getValue() == -402653184) {
+				Variables.end_instruction = true;
+				System.out.println("HEY FINAL END IN IF OF AS  GET LOST" + event.getValue());
+				return;
+
+
+			}
 
 			if (IF_OF_LatchType.check) {
 
@@ -126,7 +142,7 @@ public class InstructionFetch implements Element {
 
 	public void performIF() {
 
-		System.out.println("IN IF ");
+		System.out.println("IN IF " );
 
 		if (IF_EnableLatch.isIF_enable()) {
 
@@ -138,9 +154,14 @@ public class InstructionFetch implements Element {
 
 			else {
 
-				
+				if (Variables.end_instruction){
+					System.out.println("NO INS IS REQUESTED  FECTCHD IN IN FUTURE");
+					IF_EnableLatch.setIF_enable(false);
 
-				MemoryReadEvent myevent  = new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
+					return;
+				}
+			else
+				{MemoryReadEvent myevent  = new MemoryReadEvent(Clock.getCurrentTime() + Configuration.mainMemoryLatency, this,
 				containingProcessor.getMainMemory(),
 				containingProcessor.getRegisterFile().getProgramCounter());
 				Simulator.getEventQueue().addEvent( myevent);
@@ -148,7 +169,7 @@ public class InstructionFetch implements Element {
 
 				System.out.println("Sending memory read event "+myevent+ "request with time " +(Clock.getCurrentTime() + Configuration.mainMemoryLatency));
 				IF_EnableLatch.setIF_busy(true);
-			
+			}
 
 			}
 

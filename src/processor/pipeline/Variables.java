@@ -9,7 +9,7 @@ public class Variables {
     public static int CONFLICT_PC_OF ;
     
     public static int bcos_ignore_new_pc;
-
+public static boolean end_instruction = false;
     public static boolean sim_complete = false;
     public static int final_PC = 0;
 

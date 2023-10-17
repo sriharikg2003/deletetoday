@@ -234,11 +234,11 @@ public class OperandFetch {
 		// -754974720));
 		// IF_OF_Latch.enable_IF_OF_Later();
 
-		if (Variables.branch_taken_global_variable) {
-			System.out.println("locan branch taken in Opereand fetch and returned");
+		// if (Variables.branch_taken_global_variable) {
+		// 	System.out.println("locan branch taken in Opereand fetch and returned");
 
-			return;
-		}
+		// 	return;
+		// }
 
 		if (IF_OF_Latch.isOF_enable()) {
 
