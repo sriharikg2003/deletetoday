@@ -1,6 +1,7 @@
 package processor.pipeline;
 
 import java.util.FormatterClosedException;
+import processor.Clock;
 
 import generic.Simulator;
 import processor.Processor;
@@ -55,13 +56,13 @@ public class RegisterWrite {
 				if (OPCODE.equals("10110"))
 				{
 					containingProcessor.getRegisterFile().setValue(destination, LOAD_RESULT);
-					System.out.println("writing load result from reg "+ destination +" the value " + LOAD_RESULT);
+					System.out.println("writing load result from reg "+ destination +" the value " + LOAD_RESULT + " at time " + Clock.getCurrentTime() );
 
 				}
 				else
 				{
 					containingProcessor.getRegisterFile().setValue(destination, ALU_RESULT);
-					System.out.println("writing alu result to reg "+ destination + " alu values = " +ALU_RESULT);
+					System.out.println("writing alu result to reg "+ destination + " alu values = " +ALU_RESULT + " at time " + Clock.getCurrentTime() );
 
 				}
 			}

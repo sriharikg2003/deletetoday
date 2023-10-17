@@ -173,6 +173,7 @@ public class Execute implements Element {
 				IS_WRITE_BACK = true;
 				if (OPCODE.equals("00001")) { // addi
 					ALU_RESULT = rs1 + IMMEDIATE;
+					System.out.println(" adding immediate rs1 " + rs1 + " imm " + IMMEDIATE + " results in " + ALU_RESULT );
 				} else if (OPCODE.equals("00011")) { // subi
 					ALU_RESULT = rs1 - IMMEDIATE;
 				} else if (OPCODE.equals("00101")) { // muli

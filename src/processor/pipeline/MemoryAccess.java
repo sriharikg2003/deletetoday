@@ -91,8 +91,9 @@ public class MemoryAccess implements Element{
 
 // LOAD 
 			if(OPCODE.equals("10110")){
-				LOAD_RESULT= containingProcessor.getMainMemory().getWord(ALU_RESULT);
-				System.out.println("Loaded " + LOAD_RESULT);
+				// LOAD_RESULT= containingProcessor.getMainMemory().getWord(ALU_RESULT);
+				// System.out.println("Loaded " + LOAD_RESULT);
+				System.out.println("will load at time  " + (		Clock.getCurrentTime() + Configuration.mainMemoryLatency));
 
 
 				Simulator.getEventQueue().addEvent(
