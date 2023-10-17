@@ -296,6 +296,7 @@ public class InstructionFetch implements Element {
 
 			if (event.getValue() == -402653184) {
 				Variables.end_instruction = true;
+				Variables.final_PC = containingProcessor.getRegisterFile().getProgramCounter();
 				System.out.println("HEY FINAL END IN IF OF AS  GET LOST" + event.getValue());
 				return;
 

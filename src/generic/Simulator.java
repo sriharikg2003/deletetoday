@@ -92,7 +92,7 @@ public class Simulator {
 
 	
 
-		System.out.println( DYNAMIC_INSTRUCTIONS + ": SO MANY" + Variables.final_PC);
+		System.out.println( DYNAMIC_INSTRUCTIONS + ": SO MANY " + Variables.final_PC);
 
 		processor.getRegisterFile().setProgramCounter(Variables.final_PC);
 
