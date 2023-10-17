@@ -22,7 +22,6 @@ public class Main {
 		
 		Processor processor = new Processor();
 		Simulator.Simulator();
-		System.out.println("srihari bhosadiwala");
 		Simulator.setupSimulation(args[2], processor);
 		Simulator.simulate();
 		

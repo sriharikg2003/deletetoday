@@ -18,7 +18,6 @@ public class Simulator {
 
 
 	public static void Simulator(){
-		System.out.println("srihari ki maa ki chut ");
 		eventQueue = new EventQueue();	
 	}
 	public static void setupSimulation(String assemblyProgramFile, Processor p) {
@@ -94,7 +93,7 @@ public class Simulator {
 
 		System.out.println( DYNAMIC_INSTRUCTIONS + ": SO MANY " + Variables.final_PC);
 
-		processor.getRegisterFile().setProgramCounter(Variables.final_PC);
+		processor.getRegisterFile().setProgramCounter(Variables.final_PC + 1);
 
 		// Statistics
 

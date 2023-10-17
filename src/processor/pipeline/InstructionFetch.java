@@ -339,7 +339,7 @@ public class InstructionFetch implements Element {
 
 				// Variables.final_PC = currentPC;
 				if (newInstruction == -402653184) {
-					Variables.final_PC = currentPC + 1;
+					Variables.final_PC = currentPC ;
 				}
 
 				containingProcessor.getRegisterFile().setProgramCounter(currentPC + 1);
