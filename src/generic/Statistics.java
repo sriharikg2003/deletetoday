@@ -26,14 +26,17 @@ public class Statistics {
 			// public static int NO_OF_INSTRUCTIONS_FETCHED = 0;
 			
 			System.out.println("Number of cycles = " + Variables.NO_OF_CYCLES);
-			System.out.println("Number of branches locked = "+ Variables.BRANCH_LOCKED);
-			System.out.println("Number of data clashes = "+ Variables.DATA_CLASHES);
+
+
 			System.out.println("Number of instructions fetched = "+ Variables.NO_OF_INSTRUCTIONS_FETCHED);
+			// System.out.println("IPC "+  (Variables.NO_OF_INSTRUCTIONS_FETCHED/Variables.NO_OF_CYCLES));
 
 			writer.println("Number of cycles = " + Variables.NO_OF_CYCLES);
-			writer.println("Number of branches locked = "+ Variables.BRANCH_LOCKED);
-			writer.println("Number of data clashes = "+ Variables.DATA_CLASHES);
+
+
 			writer.println("Number of instructions fetched = "+ Variables.NO_OF_INSTRUCTIONS_FETCHED);
+			// writer.println("IPC "+ (Variables.NO_OF_INSTRUCTIONS_FETCHED/Variables.NO_OF_CYCLES));
+
 
 
 			// TODO add code here to print statistics in the output file

@@ -102,6 +102,8 @@ public class Simulator {
 		// Dynamic Instructions
 		stats.setNumberOfInstructions(DYNAMIC_INSTRUCTIONS);
 
+		// System.out.println( DYNAMIC_INSTRUCTIONS + ": SO MANY dynamic" );
+
 		// No Of Cycles
 		stats.setNumberOfCycles((int) Clock.getCurrentTime());
 

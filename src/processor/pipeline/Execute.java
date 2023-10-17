@@ -67,18 +67,7 @@ public class Execute implements Element {
 		this.EX_IF_Latch = eX_IF_Latch;
 	}
 
-	// @Override
-	// public void handleEvent(Event e) {
-	// 	if (OF_EX_Latch.isEX_busy()) {
-	// 		e.setEventTime(Clock.getCurrentTime() + 1);
-	// 		Simulator.getEventQueue().addEvent(e);
-	// 	} else {
-	// 		MemoryResponseEvent event = (MemoryResponseEvent) e;
-	// 		OF_EX_Latch.setInstruction(event.getValue());
-	// 		OF_EX_Latch.setEX_enable(true);
-	// 		IF_EnableLatch.setIF_busy(false);
-	// 	}
-	// }
+	
 	
 
 	public void performEX() {
